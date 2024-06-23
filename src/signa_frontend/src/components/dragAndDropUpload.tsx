@@ -1,7 +1,7 @@
 const DragAndDropUpload = () => {
     const handleUpload = () => {
         console.log("Upload button clicked");
-        // todo: preview pdf file using 'react-pdf' lib
+        // todo: call load component preview pdf using the file choosen by the user
     }
     
     return (
