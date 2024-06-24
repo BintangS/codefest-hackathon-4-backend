@@ -6,6 +6,12 @@ function App() {
 
   return (
     <>
+      <h1>
+        Signa!
+      </h1>
+      <p>
+        Trusted, Decentralized, and Easy to use document signing on the Blockchain. <br />
+      </p>
       <UploadFileModule />
       <PreviewPDF />
     </>

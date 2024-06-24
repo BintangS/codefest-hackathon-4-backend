@@ -1,0 +1,30 @@
+{
+    "canisters": {
+        "signa_backend": {
+            "build": "npx azle signa_backend",
+            "candid": "src/signa_backend/signa_backend.did",
+            "gzip": true,
+            "main": "src/signa_backend/src/index.ts",
+            "type": "custom",
+            "wasm": ".azle/signa_backend/signa_backend.wasm"
+        },
+        "signa_frontend": {
+            "dependencies": [
+                "signa_backend"
+            ],
+            "source": [
+                "src/signa_frontend/dist"
+            ],
+            "type": "assets",
+            "workspace": "signa_frontend"
+        }
+    },
+    "defaults": {
+        "build": {
+            "args": "",
+            "packtool": ""
+        }
+    },
+    "output_env_file": ".env",
+    "version": 1
+  }
