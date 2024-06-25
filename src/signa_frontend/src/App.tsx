@@ -6,10 +6,10 @@ function App() {
 
   return (
     <>
-      <h1>
+      <h1 className="text-9xl font-bold underline">
         Signa!
       </h1>
-      <p>
+      <p className="m-default">
         Trusted, Decentralized, and Easy to use document signing on the Blockchain. <br />
       </p>
       <UploadFileModule />

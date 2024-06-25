@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import { pdfjs } from 'react-pdf';
+import { ThemeProvider } from './components/themeProvider';
 
 // Set the workerSrc to the imported worker
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -13,6 +14,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
 )
