@@ -8,7 +8,7 @@ const AuthenticationCard: React.FC<AuthenticationCardPropsInterface> = ({
 }) => {
   const { isAuthenticated } = useAuthContext();
 
-  return !isAuthenticated ? (
+  return !isAuthenticated && (localStorage.getItem("identityICP") === null) ? (
     <div className="flex flex-col items-center gap-5">
       <div>You are not authenticated yet</div>
 
