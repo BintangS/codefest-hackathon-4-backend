@@ -137,27 +137,27 @@ export default Canister({
         return { Succes: `Success signing document with id=${documentId}` };
     }),
 
-    // // get document by id
-    // getDocumentByIdAndSigneeId: query([text, Principal], Result(Document, Message), (documentId, signeeId) => {
-    //     const doc = listOfDocument.get(documentId);
-    //     if ('None' in doc)
-    //         return Err({ NotFound: `document with id=${documentId} not found` });
-    //     else
-    //         if (doc.Some.signedBy !== signeeId)
-    //             return Err({ Fail: 'document not signed by user' });
+    // get document by id
+    getDocumentByIdAndSigneeId: query([text, Principal], Result(Document, Message), (documentId, signeeId) => {
+        const doc = listOfDocument.get(documentId);
+        if ('None' in doc)
+            return Err({ NotFound: `document with id=${documentId} not found` });
+        else
+            if (doc.Some.signedBy !== signeeId)
+                return Err({ NotFound: `document not found` });
         
-    //     return Ok(doc.Some);
-    // }),
+        return Ok(doc.Some);
+    }),
 
-    // // get all document owned by user
-    // getDocumentByOwner: query([Principal], Vec(Document), (id) => {
-    //     return listOfDocument.values().filter((doc) => doc.ownerId === id);
-    // }),
+    // get all document owned by user
+    getDocumentByOwner: query([Principal], Vec(Document), (id) => {
+        return listOfDocument.values().filter((doc) => doc.ownerId === id);
+    }),
 
-    // // get all document signed by user
-    // getDocumentBySignee: query([Principal], Vec(Document), (id) => {
-    //     return listOfDocument.values().filter((doc) => doc.signedBy === id);
-    // }),
+    // get all document signed by user
+    getDocumentBySignee: query([Principal], Vec(Document), (id) => {
+        return listOfDocument.values().filter((doc) => doc.signedBy === id);
+    }),
 
     // get all documents
     getAllDocument: query([], Vec(Document), () => {
