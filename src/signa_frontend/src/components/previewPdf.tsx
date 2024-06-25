@@ -46,11 +46,7 @@ const PreviewPDF = () => {
         <Document loading="Loading PDF document..." />
     );
 
-    if (pdfBytes instanceof Uint8Array) {
-        console.log("pdfBytes: ", pdfBytes);
-    }
-
-    // Trigger the browser to download the PDF document
+    // Trigger the browser to display the PDF document
     return (
         <Document file={{ data: pdfBytes}}>
             <Page pageNumber={1} />

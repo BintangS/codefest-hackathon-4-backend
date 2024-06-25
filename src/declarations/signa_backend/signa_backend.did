@@ -7,5 +7,4 @@ service: () -> {
     greet: (text) -> (text) query;
     signDocument: (principal, vec nat8, text) -> (variant {Fail:text; NotFound:text; Succes:text});
     updateUser: (record {id:principal; userName:text; createdAt:nat64}) -> (variant {Fail:text; NotFound:text; Succes:text});
-    getAllDocument: () -> (vec record {id:text; ownerId:principal; document:blob; signedBy:principal; createdAt: nat64; signedAt: nat64}) query;
 }

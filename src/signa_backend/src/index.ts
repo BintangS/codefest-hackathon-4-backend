@@ -158,4 +158,9 @@ export default Canister({
     // getDocumentBySignee: query([Principal], Vec(Document), (id) => {
     //     return listOfDocument.values().filter((doc) => doc.signedBy === id);
     // }),
+
+    // get all documents
+    getAllDocument: query([], Vec(Document), () => {
+        return listOfDocument.values();
+    }),
 });
