@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useAuthContext } from '../../components/contexts/UseAuthContext';
+import { useNavigate } from 'react-router-dom';
 
 interface FormData {
     email : string,
@@ -6,6 +8,8 @@ interface FormData {
 }
 
 const LoginModule = () => {
+    const navigate = useNavigate()
+    const {login, isAuthenticated} = useAuthContext()
     const [formData, setFormData] = useState<FormData>({email:"", password:""})
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -15,6 +19,12 @@ const LoginModule = () => {
     
     const handleSubmitLogin = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        if (formData.email !== null && formData.password !== null) {
+            login(formData.email, formData.password)
+        }
+        if (isAuthenticated) {
+            navigate('/upload')
+        }
     }
 
     return (
@@ -22,6 +32,7 @@ const LoginModule = () => {
             <form onSubmit={handleSubmitLogin}>
                 Email : <input type="email" name="email" value={formData.email} onChange={handleInputChange}/>
                 Password : <input type="password" name="password" value={formData.password} onChange={handleInputChange}/>
+                <button type="submit">Login</button>
             </form>
         </div>
     );

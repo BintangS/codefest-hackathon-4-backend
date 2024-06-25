@@ -8,6 +8,7 @@ import NotfoundModule from './modules/NotfoundModule';
 import LoginModule from './modules/LoginModule';
 import UploadfileModule from './modules/UploadfileModule';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { AuthContextProvider } from './components/contexts/UseAuthContext/index.tsx';
 
 // Set the workerSrc to the imported worker
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -39,6 +40,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <AuthContextProvider>
+      <RouterProvider router={router}/>
+    </AuthContextProvider>
   </React.StrictMode>,
 )

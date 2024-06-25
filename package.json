@@ -23,8 +23,10 @@
     },
     "dependencies": {
         "@dfinity/agent": "^0.15.7",
+        "@dfinity/auth-client": "^1.4.0",
         "@dfinity/candid": "^0.15.7",
         "@dfinity/principal": "^0.15.7",
+        "@types/node": "^20.14.8",
         "react-router-dom": "^6.24.0"
     }
 }

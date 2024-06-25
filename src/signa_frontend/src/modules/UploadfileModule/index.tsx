@@ -1,12 +1,15 @@
 import DragAndDropUpload from '../../components/dragAndDropUpload';
+import AuthenticationCard from '../../components/elements/AuthenticationCard/AuthenticationCard';
 import PreviewPDF from '../../components/previewPdf';
 
 const UploadfileModule = () => {
   return (
-    <>
-      <PreviewPDF /> 
-      <DragAndDropUpload />
-    </>
+    <AuthenticationCard>
+      <>
+        <PreviewPDF /> 
+        <DragAndDropUpload />
+      </>
+    </AuthenticationCard>
   );
 };
 
