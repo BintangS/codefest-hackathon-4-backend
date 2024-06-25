@@ -27,6 +27,7 @@ const DragAndDropUpload = () => {
         const users = await signa_backend.getAllUser();
 
         console.log("Users: ", users);
+        console.log("file:", file);
 
         await signa_backend.createDocument(users[0].id, file || [], users[1].id);
     }

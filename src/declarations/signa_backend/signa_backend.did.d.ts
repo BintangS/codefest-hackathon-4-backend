@@ -33,6 +33,19 @@ export interface _SERVICE {
       { 'NotFound' : string } |
       { 'Succes' : string }
   >,
+  'getAllDocument' : ActorMethod<
+    [],
+    Array<
+      {
+        'id' : string,
+        'ownerId' : Principal,
+        'createdAt' : bigint,
+        'signedAt' : bigint,
+        'signedBy' : Principal,
+        'document' : Uint8Array | number[],
+      }
+    >
+  >,
   'getAllUser' : ActorMethod<
     [],
     Array<{ 'id' : Principal, 'userName' : string, 'createdAt' : bigint }>

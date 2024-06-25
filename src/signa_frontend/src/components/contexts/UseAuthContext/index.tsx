@@ -1,12 +1,11 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import {
   AuthContextInterface,
   AuthContextProviderProps,
-  userProfileDataInterface
+  UserInterface
 } from './interface';
-// import { signa_backend } from '@backend';
-// import { AuthClient } from '@dfinity/auth-client';
-// import { _SERVICE } from '../../../../../declarations/submid_backend/submid_backend.did';
+import { signa_backend } from '../../../../../declarations/signa_backend';
+import { AuthClient } from '@dfinity/auth-client';
 
 const AuthContext = createContext({} as AuthContextInterface);
 
@@ -14,32 +13,95 @@ export const useAuthContext = () => useContext(AuthContext);
 
 export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({children}) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>();
-  const [userProfileData, setUserProfileData] = useState<userProfileDataInterface | null>(null);
+  const [authClient, setAuthClient] = useState<AuthClient>();
+  const [profile, setProfile] = useState<UserInterface | null>();
 
-  const login = (email: string, password: string) => {
-    if (!isAuthenticated) {
-      if (email == "steve.harnadi@gmail.com" && password == "admin123") {
-        setUserProfileData({
-          email : email,
-          password : password
-        })
-        localStorage.setItem("identityICP", "abcdefghi")
+  const status = process.env.DFX_NETWORK;
+  const IDENTITY_PROVIDER =
+    status === 'local'
+      ? `http://${process.env.CANISTER_ID_INTERNET_IDENTITY}.localhost:4943`
+      : `https://identity.ic0.app`;
+  const MAX_TTL = BigInt(7 * 24 * 60 * 60 * 1000 * 1000 * 1000);
+
+  const login = () => {
+    if (!authClient) return;
+    authClient.login({
+      identityProvider: IDENTITY_PROVIDER,
+      onSuccess: () => {
         setIsAuthenticated(true);
+        getProfile();
+      },
+      maxTimeToLive: MAX_TTL,
+    });
+  };
+
+  const getProfile = async () => {
+    if (!authClient) return;
+
+    const principal = authClient.getIdentity().getPrincipal();
+    if (principal.isAnonymous()) setProfile(null);
+
+    try {
+      setProfile(undefined);
+      const responseData = await signa_backend.getUserById(principal);
+      if ('Err' in responseData && 'NotFound' in responseData.Err) {
+        setProfile(null);
+      } else if ('Ok' in responseData) {
+        setProfile(responseData.Ok);
       }
+    } catch (err: any) {
+      throw new Error(err.message);
+    }
+  };
+
+  const createProfile = async (name: string) => {
+    if (!authClient || name == '') return;
+
+    try {
+      const responseData = await signa_backend.createUser({
+        id: authClient.getIdentity().getPrincipal(),
+        name: name,
+      });
+      if ('Succes' in responseData) {
+        getProfile();
+      }
+    } catch (err: any) {
+      throw new Error(err.message);
     }
   };
 
   const logout = () => {
-    setUserProfileData(null)
     localStorage.removeItem("identityICP")
     setIsAuthenticated(false);
   };
 
+  useEffect(() => {
+    AuthClient.create().then(async (client) => {
+      const isAnonymous = await client
+        .getIdentity()
+        .getPrincipal()
+        .isAnonymous();
+
+      console.log("bro ", await client.getIdentity().getPrincipal().toText());
+
+      setAuthClient(client);
+      setIsAuthenticated(!isAnonymous);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (authClient) {
+      getProfile();
+    }
+  }, [authClient]);
+
   const contextValue = {
+    profile: profile,
+    authClient: authClient,
     isAuthenticated: isAuthenticated,
-    userProfileData: userProfileData,
+    createProfile: createProfile,
     login: login,
-    logout: logout
+    logout: logout,
   };
 
   return (

@@ -43,6 +43,22 @@ export const idlFactory = ({ IDL }) => {
         ],
         [],
       ),
+    'getAllDocument' : IDL.Func(
+        [],
+        [
+          IDL.Vec(
+            IDL.Record({
+              'id' : IDL.Text,
+              'ownerId' : IDL.Principal,
+              'createdAt' : IDL.Nat64,
+              'signedAt' : IDL.Nat64,
+              'signedBy' : IDL.Principal,
+              'document' : IDL.Vec(IDL.Nat8),
+            })
+          ),
+        ],
+        ['query'],
+      ),
     'getAllUser' : IDL.Func(
         [],
         [
