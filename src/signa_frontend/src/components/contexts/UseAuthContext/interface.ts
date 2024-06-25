@@ -14,8 +14,8 @@ export interface userProfileDataInterface {
 
 export interface AuthContextInterface {
   isAuthenticated: boolean | undefined;
-  userProfileData: userProfileDataInterface | null;
-  login: (email:string, password:string) => void;
+  // userProfileData: userProfileDataInterface | null;
+  login: () => void;
   logout: () => void;
 }
 
