@@ -5,7 +5,6 @@ import './index.css'
 import { pdfjs } from 'react-pdf';
 import HomepageModule from './modules/WelcomepageModule'
 import NotfoundModule from './modules/NotfoundModule';
-import LoginModule from './modules/LoginModule';
 import UploadfileModule from './modules/UploadfileModule';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { AuthContextProvider } from './components/contexts/UseAuthContext/index.tsx';
@@ -26,10 +25,6 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <HomepageModule />,
-      },
-      {
-        path: '/login',
-        element: <LoginModule />,
       },
       {
         path: '/upload',

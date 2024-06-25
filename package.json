@@ -5,12 +5,13 @@
     },
     "name": "signa",
     "scripts": {
-        "build": "npm run build --workspaces --if-present",
-        "prebuild": "npm run prebuild --workspaces --if-present",
-        "pretest": "npm run prebuild --workspaces --if-present",
-        "start": "npm start --workspaces --if-present",
-        "test": "npm test --workspaces --if-present",
-        "prepare": "husky"
+      "setup-declarations": "dfx generate signa_backend",
+      "build": "npm run build --workspaces --if-present",
+      "prebuild": "npm run prebuild --workspaces --if-present",
+      "pretest": "npm run prebuild --workspaces --if-present",
+      "start": "npm start --workspaces --if-present",
+      "test": "npm test --workspaces --if-present",
+      "prepare": "husky"
     },
     "type": "module",
     "workspaces": [
@@ -18,15 +19,7 @@
         "src/signa_frontend"
     ],
     "devDependencies": {
-        "husky": "^9.0.11",
-        "tailwindcss": "^3.4.4"
+        "husky": "^9.0.11"
     },
-    "dependencies": {
-        "@dfinity/agent": "^0.15.7",
-        "@dfinity/auth-client": "^1.4.0",
-        "@dfinity/candid": "^0.15.7",
-        "@dfinity/principal": "^0.15.7",
-        "@types/node": "^20.14.8",
-        "react-router-dom": "^6.24.0"
-    }
+    "dependencies": {}
 }
