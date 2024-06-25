@@ -8,6 +8,16 @@ function App() {
       </nav>
       <Outlet />
     </main>
+    // <>
+    //   <h1 className="text-9xl font-bold underline">
+    //     Signa!
+    //   </h1>
+    //   <p className="m-default">
+    //     Trusted, Decentralized, and Easy to use document signing on the Blockchain. <br />
+    //   </p>
+    //   <UploadFileModule />
+    //   <PreviewPDF />
+    // </>
   )
   
 }

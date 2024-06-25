@@ -9,6 +9,7 @@ import LoginModule from './modules/LoginModule';
 import UploadfileModule from './modules/UploadfileModule';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { AuthContextProvider } from './components/contexts/UseAuthContext/index.tsx';
+import { ThemeProvider } from './components/themeProvider';
 
 // Set the workerSrc to the imported worker
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -40,8 +41,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <AuthContextProvider>
-      <RouterProvider router={router}/>
-    </AuthContextProvider>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <AuthContextProvider>
+        <RouterProvider router={router}/>
+      </AuthContextProvider>
+    </ThemeProvider>
   </React.StrictMode>,
 )
