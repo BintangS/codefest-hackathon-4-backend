@@ -3,13 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <main className="m-default">
-        <nav>
-        </nav>
-        <Outlet />
-      </main>
-    </>
+    <Outlet />
   )
   
 }

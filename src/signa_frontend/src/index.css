@@ -36,8 +36,6 @@
         --radius: 1rem;
 
         --font-sans: 'Inter';
-
-        padding: 0;
     }
 }
 
@@ -47,5 +45,8 @@
     }
     body {
         @apply bg-background text-foreground;;
+    }
+    #root {
+        @apply p-0;
     }
 }
