@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useAuthContext } from '../contexts/UseAuthContext';
 import { AuthenticationCardPropsInterface } from './interface';
+import LoginModule from '../../modules/LoginModule'
 
 const AuthenticationCard: React.FC<AuthenticationCardPropsInterface> = ({
   children,
 }) => {
-  const { isAuthenticated, login, profile, authClient, createProfile } =
+  const { isAuthenticated, profile, authClient, createProfile } =
     useAuthContext();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [username, setUsername] = useState<string>('');
@@ -23,13 +24,7 @@ const AuthenticationCard: React.FC<AuthenticationCardPropsInterface> = ({
   return profile === undefined ? (
     <div>Loading...</div>
   ) : !isAuthenticated ? (
-    <div className="flex flex-col items-center gap-5">
-      <div>You are not authenticated yet</div>
-
-      <button onClick={login}>
-        Login
-      </button>
-    </div>
+    <LoginModule />
   ) : profile === null ? (
     <div className="flex flex-col items-center gap-5">
       <div>You are authenticated</div>
