@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { AuthContextProvider } from './components/contexts/UseAuthContext/index.tsx';
 import { ThemeProvider } from './components/themeProvider';
 import LoginModule from './modules/LoginModule/index.tsx';
+import ReceivefileModule from './modules/ReceivefileModule/index.tsx';
 
 // Set the workerSrc to the imported worker
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/upload',
         element: <UploadfileModule />,
+      },
+      {
+        path: '/receive_pdf',
+        element: <ReceivefileModule />
       }
     ],
   },
