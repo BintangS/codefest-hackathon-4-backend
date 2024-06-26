@@ -11,6 +11,7 @@ import { AuthContextProvider } from './components/contexts/UseAuthContext/index.
 import { ThemeProvider } from './components/themeProvider';
 import LoginModule from './modules/LoginModule/index.tsx';
 import ReceivefileModule from './modules/ReceivefileModule/index.tsx';
+import SendfileModule from './modules/SendfileModule/index.tsx';
 
 // Set the workerSrc to the imported worker
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: '/receive_pdf',
         element: <ReceivefileModule />
+      },
+      {
+        path: '/send_pdf',
+        element: <SendfileModule />
       }
     ],
   },

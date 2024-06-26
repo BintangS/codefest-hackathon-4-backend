@@ -1,5 +1,5 @@
-import AssetLeftReceivePage from '../../assets/AssetLeft-ReceivePage.webp'
-import AssetRightReceivePage from '../../assets/AssetRight-ReceivePage.webp'
+import AssetLeftSendPage from '../../assets/AssetLeft-SendPage.webp'
+import AssetRightSendPage from '../../assets/AssetRight-SendPage.webp'
 import DocumentLogo from '../../assets/DocumentLogo.svg'
 import SignaLogo_v1 from '../../assets/SignaLogo_v1.png'
 import SignaSignature from '../../assets/SignaSignature.png'
@@ -11,7 +11,7 @@ import IconSendWhite from '../../assets/sidebar/icon-send white.svg'
 import IconSettingWhite from '../../assets/sidebar/icon-setting white.svg'
 import BorderIconBlue from '../../assets/sidebar/border-icon-blue.png'
 
-const ReceivefileModule = () => {
+const SendfileModule = () => {
     return (
         <div className="flex gap-5 justify-between bg-white max-md:flex-wrap">
             <div className="flex gap-0">
@@ -60,7 +60,7 @@ const ReceivefileModule = () => {
                 <div className="flex relative flex-col items-start px-11 pt-6 pb-20 aspect-[0.1] w-[101px]">
                     <img
                         loading="lazy"
-                        src={AssetLeftReceivePage}
+                        src={AssetLeftSendPage}
                         className="object-cover absolute inset-0 size-full"
                     />
                     <div className="absolute flex gap-[10px]">
@@ -75,35 +75,57 @@ const ReceivefileModule = () => {
                             className="w-[50px] h-[50px] shrink-0 w-14"
                         />
                         <div className="w-full shrink 0 leading-[300%]">|</div>
-                        <div className="w-full shrink 0">Receive PDF</div>
+                        <div className="w-full shrink 0">Send PDF</div>
                     </div>
                 </div>
             </div>
-            <div className="flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full">
-                <div className="flex flex-col px-5 my-auto max-md:max-w-full">
-                    <div className="self-center text-3xl font-medium leading-10 text-center text-black max-md:max-w-full">
-                        You Receive PDF from {'{'}  Internet Identity ID {'}'} to sign ....
-                    </div>
-                    <div className="flex flex-col items-center px-7 pt-20 pb-6 mt-14 text-lg rounded-xl border border-solid bg-zinc-100 border-zinc-800 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-                        <img
-                        loading="lazy"
-                        src={DocumentLogo}
-                        className="mt-20 aspect-square w-[88px] max-md:mt-10"
-                        />
-                        <div className="mt-5 text-neutral-400">Your Document</div>
-                        <div className="justify-center items-center self-stretch px-16 py-6 mt-36 font-semibold text-center bg-cyan-200 rounded-md border border-solid border-zinc-800 text-stone-600 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-                            Sign Document
+            <div className="flex flex-col ml-5 w-[77%] max-md:ml-0 max-md:w-full">
+                <div className="flex grow gap-5 justify-between max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+                    <div className="flex flex-col my-auto max-md:max-w-full">
+                        <div className="flex justify-center items-center px-16 py-20 text-lg rounded-xl border border-solid bg-zinc-100 border-zinc-800 text-neutral-400 max-md:px-5 max-md:max-w-full">
+                            <div className="flex flex-col mt-11 mb-5 max-w-full w-[168px] max-md:mt-10">
+                            <img
+                                loading="lazy"
+                                src={DocumentLogo}
+                                className="self-center aspect-square w-[88px]"
+                            />
+                            <div className="mt-5">Add your Document</div>
+                            </div>
+                        </div>
+                        <div className="flex gap-5 mt-20 max-md:flex-wrap max-md:mt-10">
+                            <div className="flex flex-col grow shrink-0 min-w-[50%]">
+                                <div className="text-lg font-medium text-center text-neutral-900">
+                                    Internet Identity
+                                </div>
+                                <div className="justify-center items-start px-6 py-7 mt-5 text-center rounded-xl border border-solid bg-zinc-100 border-zinc-800 text-neutral-400 max-md:px-5">
+                                    Enter Internet Identity
+                                </div>
+                            </div>
+                            <div className="flex flex-col shrink-0 text-lg w-fit">
+                                <div className="my-auto text-base text-center text-black">
+                                    OR
+                                </div>
+                            </div>
+                            <div className="flex flex-col grow shrink-0 min-w-[50%]">
+                                <div className="text-lg font-medium text-center text-neutral-900">Email</div>
+                                <div className="justify-center items-start px-6 py-7 mt-5 text-center rounded-xl border border-solid bg-zinc-100 border-zinc-800 text-neutral-400 max-md:px-5">
+                                    Enter Email
+                                </div>
+                            </div>
+                        </div>
+                        <div className="justify-center items-center px-16 py-7 mt-20 text-lg font-semibold text-center whitespace-nowrap bg-sky-200 rounded-xl border border-solid border-zinc-800 text-stone-600 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                            Send
                         </div>
                     </div>
+                    <img
+                    loading="lazy"
+                    src={AssetRightSendPage}
+                    className="shrink-0 max-w-full aspect-[0.1] w-[100px]"
+                    />
                 </div>
-                <img
-                loading="lazy"
-                src={AssetRightReceivePage}
-                className="shrink-0 max-w-full aspect-[0.1] w-[101px]"
-                />
             </div>
         </div>
     );
 };
 
-export default ReceivefileModule;
+export default SendfileModule;
