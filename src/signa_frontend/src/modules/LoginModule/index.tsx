@@ -4,6 +4,7 @@ import WelcomePageImage from '../../assets/Asset-WelcomePage.webp'
 import RoboLoginPageImage from '../../assets/Robo-LoginPage.webp'
 import SignaLogo1 from '../../assets/SignaLogo_v1.png'
 import SignaSignature from '../../assets/SignaSignature.png'
+import InternetIdentityLogo from '../../assets/InternetIdentityLogo.png'
 
 const LoginModule = () => {
     const navigate = useNavigate()
@@ -57,7 +58,7 @@ const LoginModule = () => {
                                 </div>
                                 <img
                                     loading="lazy"
-                                    srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/2d59c045641083947c13078a3ea18252171355114f00609bc64903389e4e803d?apiKey=77b90fc2290346248c9501f26423abd9&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/2d59c045641083947c13078a3ea18252171355114f00609bc64903389e4e803d?apiKey=77b90fc2290346248c9501f26423abd9&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/2d59c045641083947c13078a3ea18252171355114f00609bc64903389e4e803d?apiKey=77b90fc2290346248c9501f26423abd9&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/2d59c045641083947c13078a3ea18252171355114f00609bc64903389e4e803d?apiKey=77b90fc2290346248c9501f26423abd9&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/2d59c045641083947c13078a3ea18252171355114f00609bc64903389e4e803d?apiKey=77b90fc2290346248c9501f26423abd9&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/2d59c045641083947c13078a3ea18252171355114f00609bc64903389e4e803d?apiKey=77b90fc2290346248c9501f26423abd9&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/2d59c045641083947c13078a3ea18252171355114f00609bc64903389e4e803d?apiKey=77b90fc2290346248c9501f26423abd9&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/2d59c045641083947c13078a3ea18252171355114f00609bc64903389e4e803d?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                    src={InternetIdentityLogo}
                                     className="shrink-0 max-w-full aspect-[3.7] w-[113px]"
                                 />
                             </div>

@@ -36,6 +36,8 @@
         --radius: 1rem;
 
         --font-sans: 'Inter';
+
+        padding: 0;
     }
 }
 
