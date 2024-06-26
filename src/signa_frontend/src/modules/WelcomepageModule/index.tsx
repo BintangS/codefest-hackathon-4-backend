@@ -1,11 +1,10 @@
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import AssetPhoneHalf from '../../assets/AssetPhone-WelcomePage.webp'
 import RoboSigna from '../../assets/RoboSigna.webp'
 import DJBLogo from '../../assets/DJBLogo.png'
 import WelcomeLegalLogo from '../../assets/WelcomeLegalLogo.png'
 import KominfoLogo from '../../assets/KominfoLogo.png'
 import PeruriLogo from '../../assets/PeruriLogo.png'
-// import InternetComputerLogo from '../../assets/InternetComputerLogo.png'
 import InternetIdentityLogo2 from '../../assets/InternetIdentityLogo2.png'
 import SignaSignatureWhite from '../../assets/SignaSignatureWhite.png'
 import SignaLogo from '../../assets/SignaLogo_v1.png'
@@ -14,17 +13,6 @@ import AssetDownWelcomePage from '../../assets/AssetDown-WelcomePage.webp'
 
 const HomepageModule = () => {
     return (
-        // <div>
-        //     Welcome Page !!
-        //     <Link to={'/login'}>
-        //         <button>Go To Login</button>
-        //     </Link>
-        //     <Link to={'/upload'}>
-        //         <button>Go To Upload</button>
-        //     </Link>
-        // </div>
-
-
         <div className="flex flex-col items-center bg-white">
             <div className="flex overflow-hidden relative flex-col justify-center self-stretch w-full max-md:max-w-full">
                 <img
@@ -32,7 +20,7 @@ const HomepageModule = () => {
                 src={BackgroundWelcomePage}
                 className="object-cover absolute inset-0"
                 />
-                <div className="flex relative flex-col items-center px-16 pt-11 pb-20 w-full max-md:px-5 max-md:max-w-full">
+                <div className="flex relative flex-col items-center px-16 pt-11 pb-12 w-full max-md:px-5 max-md:max-w-full">
                 <div className="flex flex-col mb-28 w-full max-w-[1272px] max-md:mb-10 max-md:max-w-full">
                     <div className="flex gap-5 justify-between items-center w-full max-md:flex-wrap max-md:max-w-full">
                     <div className="flex gap-0 self-stretch">
@@ -97,49 +85,53 @@ const HomepageModule = () => {
                 </div>
                 </div>
             </div>
-            <div className="flex gap-5 justify-between px-5 max-w-full w-[966px] max-md:flex-wrap max-md:mt-10">
+            <div className="flex gap-5 justify-between px-5 max-w-full max-md:flex-wrap max-md:mt-10">
                 <img
                 loading="lazy"
                 src={PeruriLogo}
-                className="aspect-[3.33] w-[269px]"
+                className="aspect-[3.33] h-[60px]"
                 />
                 <img
                 loading="lazy"
                 src={KominfoLogo}
-                className="my-auto aspect-[3.23] w-[243px]"
+                className="my-auto aspect-[3.23] h-[60px]"
                 />
                 <img
                 loading="lazy"
                 src={WelcomeLegalLogo}
-                className="shrink-0 w-20 aspect-square"
+                className="shrink-0 h-[60px] aspect-square"
                 />
                 <img
                 loading="lazy"
                 src={DJBLogo}
-                className="shrink-0 my-auto max-w-full aspect-[2.44] w-[175px]"
+                className="shrink-0 my-auto max-w-full aspect-[2.44] h-[60px]"
                 />
             </div>
             <div className="w-full max-w-[1317px] max-md:mt-10 max-md:max-w-full">
-                <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+                <div className="flex mb-[50px] gap-5 max-md:flex-col max-md:gap-0">
                     <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                         <div className="flex flex-col grow px-5 mt-20 max-md:mt-10 max-md:max-w-full">
-                        <div className="text-3xl font-medium leading-10 text-black max-md:max-w-full">
+                        <div className="text-left text-[1rem] font-bold text-black max-md:max-w-full">
                             Conveniently eSign your document and safely secure the eDocs
                             with Web 3.0 SCP. You will have stronger security protection of
                             your document
                         </div>
-                        <div className="flex gap-5 items-center self-start mt-9 text-lg text-center">
-                            <div className="flex gap-2.5 justify-center self-stretch p-2.5 text-white bg-cyan-600 rounded-xl shadow-sm">
-                            <div>Sign in Now!</div>
-                            <img
-                                loading="lazy"
-                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d919ff89240ed9ab1818042f71150953ee8b18134214f4ac401580295703695b?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                className="shrink-0 w-6 aspect-square"
-                            />
-                            </div>
-                            <div className="flex-auto self-stretch my-auto text-cyan-600">
-                            View Pricing
-                            </div>
+                        <div className="text-[1rem] flex gap-5 items-center self-start mt-9 text-center">
+                            <Link to={'/login'}>
+                                <div className="flex gap-2.5 justify-center self-stretch p-2.5 text-white bg-cyan-600 rounded-xl shadow-sm">
+                                    <div>Sign in Now!</div>
+                                    <img
+                                        loading="lazy"
+                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/d919ff89240ed9ab1818042f71150953ee8b18134214f4ac401580295703695b?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                        className="shrink-0 w-6 aspect-square"
+                                    />
+                                </div>
+                            </Link>
+                            <Link to={'/upload'}>
+                                <div className="flex-auto self-stretch my-auto text-cyan-600">
+                                    Upload Now
+                                </div>
+                            </Link>
                             <img
                             loading="lazy"
                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/18504d4e7c5465ec55e618bfa6e3270b63aaa7374e0c199c4b99aa7e2465ab83?apiKey=77b90fc2290346248c9501f26423abd9&"
