@@ -119,74 +119,120 @@ const DashboardfileModule = () => {
                                     </div>
                                 </div>
                                 <div className="flex gap-5 px-5 py-3.5 mt-14 text-base text-white max-md:flex-wrap max-md:pr-5 max-md:mt-10 max-md:max-w-full">
-                                    <div className="flex w-2/5 flex-col self-start">
-                                        <div className="text-zinc-500">Document</div>
-                                        <div className="flex gap-3.5 mt-7">
-                                            <div className="mt-[7px] shrink-0 self-start w-3 h-3 rounded-full border border-white border-solid stroke-[1px]" />
-                                            <div className="flex-auto">
-                                                Perjanjian Pinjaman Mas Bintang
-                                            </div>
-                                        </div>
-                                        <div className="flex gap-3.5 mt-7">
-                                            <div className="mt-[7px] shrink-0 self-start w-3 h-3 rounded-full border border-white border-solid stroke-[1px]" />
-                                            <div className="flex-auto">
-                                                Perjanjian Pinjaman Mas Bintang
-                                            </div>
-                                        </div>
-                                        <div className="flex gap-3.5 mt-7">
-                                            <div className="mt-[7px] shrink-0 self-start w-3 h-3 rounded-full border border-white border-solid stroke-[1px]" />
-                                            <div className="flex-auto">
-                                                Perjanjian Pinjaman Mas Bintang
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex w-1/5 flex-col self-start">
-                                        <div className="text-zinc-500">Date Uploaded</div>
-                                        <div className="mt-7 ml-2.5 max-md:mr-2">02-02-2024</div>
-                                        <div className="mt-7 ml-2.5 max-md:mr-2">02-02-2024</div>
-                                        <div className="mt-7 ml-2.5 max-md:mr-2">02-02-2024</div>
-                                    </div>
-                                    <div className="flex w-1/5 flex-col items-center whitespace-nowrap">
-                                        <div className="self-stretch text-zinc-500">Receiver</div>
-                                        <div className="flex gap-1.5 mt-6 w-[30px]">
-                                            <img
-                                                loading="lazy"
-                                                src={PeopleLogoWhite}
-                                                className="shrink-0 w-full aspect-square"
-                                            />
-                                            <div className="my-auto">1</div>
-                                        </div>
-                                        <div className="flex gap-1.5 mt-5 w-[30px]">
-                                            <img
-                                                loading="lazy"
-                                                src={PeopleLogoWhite}
-                                                className="shrink-0 w-full aspect-square"
-                                            />
-                                            <div className="my-auto">1</div>
-                                        </div>
-                                        <div className="flex gap-1.5 mt-5 w-[30px]">
-                                            <img
-                                                loading="lazy"
-                                                src={PeopleLogoWhite}
-                                                className="shrink-0 w-full aspect-square"
-                                            />
-                                            <div className="my-auto">1</div>
-                                        </div>
-                                    </div>
-                                    <div className="flex w-1/5 flex-col text-sm text-lime-500 whitespace-nowrap">
-                                        <div className="self-center text-base text-zinc-500">
-                                            Status
-                                        </div>
-                                        <div className="justify-center px-2.5 py-1 mt-7 bg-lime-700 rounded-xl">
-                                            Signed
-                                        </div>
-                                        <div className="justify-center px-2.5 py-1 mt-5 bg-lime-700 rounded-xl">
-                                            Signed
-                                        </div>
-                                        <div className="justify-center px-2.5 py-1 mt-5 bg-lime-700 rounded-xl">
-                                            Signed
-                                        </div>
-                                    </div>
+                                    <table className="table-auto w-full">
+                                        <thead>
+                                            <tr>
+                                                <th className='w-2/5'>Document</th>
+                                                <th className='w-1/5'>Date Uploaded</th>
+                                                <th className='w-1/5'>Receiver</th>
+                                                <th className='w-1/5'>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td className='w-2/5'>
+                                                    <div className="flex gap-3.5 mt-7">
+                                                        <div className="mt-[7px] shrink-0 self-start w-3 h-3 rounded-full border border-white border-solid stroke-[1px]" />
+                                                        <div className="flex-auto">
+                                                            Perjanjian Pinjaman Mas Bintang
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className='w-1/5'>
+                                                    <div className="flex gap-3.5 mt-7">
+                                                        <div className="flex-auto">02-02-2024</div>
+                                                    </div>
+                                                </td>
+                                                <td className='w-1/5'>
+                                                    <div className="flex-auto gap-3.5 mt-7 w-[30px]">
+                                                        <div className="flex gap-1.5 mt-5">
+                                                            <img
+                                                                loading="lazy"
+                                                                src={PeopleLogoWhite}
+                                                                className="shrink-0 w-full aspect-square"
+                                                            />
+                                                            <div className="my-auto">1</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className='w-1/5'>
+                                                    <div className="flex gap-3.5 mt-7">
+                                                        <div className="flex-auto justify-center px-2.5 py-1 bg-lime-700 rounded-xl">
+                                                            Signed
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td className='w-2/5'>
+                                                    <div className="flex gap-3.5 mt-7">
+                                                        <div className="mt-[7px] shrink-0 self-start w-3 h-3 rounded-full border border-white border-solid stroke-[1px]" />
+                                                        <div className="flex-auto">
+                                                            Perjanjian Pinjaman Mas Bintang
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className='w-1/5'>
+                                                    <div className="flex gap-3.5 mt-7">
+                                                        <div className="flex-auto">02-02-2024</div>
+                                                    </div>
+                                                </td>
+                                                <td className='w-1/5'>
+                                                    <div className="flex-auto gap-3.5 mt-7 w-[30px]">
+                                                        <div className="flex gap-1.5 mt-5">
+                                                            <img
+                                                                loading="lazy"
+                                                                src={PeopleLogoWhite}
+                                                                className="shrink-0 w-full aspect-square"
+                                                            />
+                                                            <div className="my-auto">1</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className='w-1/5'>
+                                                    <div className="flex gap-3.5 mt-7">
+                                                        <div className="flex-auto justify-center px-2.5 py-1 bg-lime-700 rounded-xl">
+                                                            Signed
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td className='w-2/5'>
+                                                    <div className="flex gap-3.5 mt-7">
+                                                        <div className="mt-[7px] shrink-0 self-start w-3 h-3 rounded-full border border-white border-solid stroke-[1px]" />
+                                                        <div className="flex-auto">
+                                                            Perjanjian Pinjaman Mas Bintang
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className='w-1/5'>
+                                                    <div className="flex gap-3.5 mt-7">
+                                                        <div className="flex-auto">02-02-2024</div>
+                                                    </div>
+                                                </td>
+                                                <td className='w-1/5'>
+                                                    <div className="flex-auto gap-3.5 mt-7 w-[30px]">
+                                                        <div className="flex gap-1.5 mt-5">
+                                                            <img
+                                                                loading="lazy"
+                                                                src={PeopleLogoWhite}
+                                                                className="shrink-0 w-full aspect-square"
+                                                            />
+                                                            <div className="my-auto">1</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className='w-1/5'>
+                                                    <div className="flex gap-3.5 mt-7">
+                                                        <div className="flex-auto justify-center px-2.5 py-1 bg-lime-700 rounded-xl">
+                                                            Signed
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                                 <img
                                     loading="lazy"
