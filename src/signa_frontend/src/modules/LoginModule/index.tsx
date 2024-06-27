@@ -52,7 +52,7 @@ const LoginModule = () => {
                                 src={RoboLoginPageImage}
                                 className="w-full aspect-[0.93] max-md:max-w-full"
                             />
-                            <div onClick={handleSubmitLogin} className="absolute w-[110%] text-[1.25vw] leading-[2vw] top-[70%] right-0 -translate-y-[300%] text-[#fff] border-[none] cursor-pointer flex gap-3.5 py-4 pr-3.5 pl-7 font-bold text-center text-white bg-cyan-500 rounded-xl border border-solid border-zinc-800 border-opacity-0">
+                            <div onClick={handleSubmitLogin} className="absolute w-[110%] text-[1.25vw] leading-[2vw] lg:top-[70%] md:top-[90%] right-0 -translate-y-[300%] text-[#fff] border-[none] cursor-pointer flex gap-3.5 py-4 pr-3.5 pl-7 font-bold text-center text-white bg-cyan-500 rounded-xl border border-solid border-zinc-800 border-opacity-0">
                                 <div className="flex-auto border border-solid border-zinc-800 border-opacity-0">
                                     Sign In Here with Internet Identity
                                 </div>
