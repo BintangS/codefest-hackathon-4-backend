@@ -29,11 +29,13 @@ const SidebarMenu: React.FC<SidebarmenuInterface> = ({name}) => {
                 src={BorderIconBlue}
                 className="self-center mt-8 w-full border border-sky-400 border-solid aspect-[50] stroke-[1px] stroke-sky-400"
             />
-            <img
-                loading="lazy"
-                src={(name == "receive_pdf") ? IconReceiveBlue : IconReceiveWhite}
-                className="mt-4 w-full aspect-square"
-            />
+            <Link to='/receive_pdf'>
+                <img
+                    loading="lazy"
+                    src={(name == "receive_pdf") ? IconReceiveBlue : IconReceiveWhite}
+                    className="mt-4 w-full aspect-square"
+                />
+            </Link>
             <Link to="/dashboard">
                 <img
                     loading="lazy"

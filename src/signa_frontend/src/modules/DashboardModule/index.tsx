@@ -21,7 +21,7 @@ const DashboardfileModule = () => {
                         <img
                             loading="lazy"
                             src={SignaLogo_v1}
-                            className="mt-4 w-[50px] h-[50px] shrink-0 w-12"
+                            className="mt-4 w-[70px]"
                         />
                         <img
                             loading="lazy"

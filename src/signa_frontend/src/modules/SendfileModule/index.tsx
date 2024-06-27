@@ -20,7 +20,7 @@ const SendfileModule = () => {
                         <img
                             loading="lazy"
                             src={SignaLogo_v1}
-                            className="w-[50px] h-[50px] shrink-0 w-12"
+                            className="w-[70px]"
                         />
                         <img
                             loading="lazy"
