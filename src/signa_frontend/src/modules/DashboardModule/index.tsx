@@ -14,7 +14,7 @@ import BorderIconBlue from '../../assets/sidebar/border-icon-blue.png'
 
 const DashboardfileModule = () => {
     return (
-        <div className="flex gap-0 bg-white max-md:flex-wrap">
+        <div className="flex [width:inherit] gap-0 bg-white max-md:flex-wrap">
             <div className="flex flex-col items-start px-6 py-11 w-[70px] max-w-[85px] bg-[linear-gradient(180deg,_#121212_0%,_#002636_100%)]">
                 <img
                     loading="lazy"
