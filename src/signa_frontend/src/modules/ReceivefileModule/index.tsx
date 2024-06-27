@@ -13,8 +13,8 @@ import BorderIconBlue from '../../assets/sidebar/border-icon-blue.png'
 
 const ReceivefileModule = () => {
     return (
-        <div className="flex gap-5 justify-between bg-white max-md:flex-wrap">
-            <div className="flex gap-0">
+        <div className="flex [width:inherit] gap-5 justify-normal bg-white max-md:flex-wrap">
+            <div className="flex w-1/5 gap-0">
                 <div className="flex flex-col items-start px-6 py-11 w-[70px] max-w-[85px] bg-[linear-gradient(180deg,_#121212_0%,_#002636_100%)]">
                     <img
                         loading="lazy"
@@ -79,7 +79,7 @@ const ReceivefileModule = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full">
+            <div className="flex w-[90%] gap-5 justify-center max-md:flex-wrap max-md:max-w-full">
                 <div className="flex flex-col px-5 my-auto max-md:max-w-full">
                     <div className="self-center text-3xl font-medium leading-10 text-center text-black max-md:max-w-full">
                         You Receive PDF from {'{'}  Internet Identity ID {'}'} to sign ....
@@ -99,10 +99,12 @@ const ReceivefileModule = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="flex w-[10%] gap-0">
                 <img
                     loading="lazy"
                     src={AssetRightReceivePage}
-                    className="shrink-0 max-w-full aspect-[0.1] w-[101px]"
+                    className="shrink-0 max-w-full aspect-[0.1]"
                 />
             </div>
         </div>
