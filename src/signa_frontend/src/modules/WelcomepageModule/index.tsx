@@ -18,7 +18,7 @@ const HomepageModule = () => {
                 <img
                     loading="lazy"
                     src={BackgroundWelcomePage}
-                    className="object-cover absolute inset-0"
+                    className="object-cover absolute [width:inherit]"
                 />
                 <div className="flex relative flex-col items-center px-16 pt-11 pb-12 w-full max-md:px-5 max-md:max-w-full">
                     <div className="flex flex-col mb-28 w-full max-md:mb-10 max-md:max-w-full">
@@ -35,7 +35,7 @@ const HomepageModule = () => {
                                     className="shrink-0 aspect-[1.3] w-[87px]"
                                 />
                             </div>
-                            <div className="flex gap-5 justify-between self-stretch my-auto text-lg text-center text-white max-md:flex-wrap max-md:max-w-full">
+                            <div className="flex gap-5 justify-between self-stretch my-auto text-[1.5vw] text-center text-white max-md:flex-wrap max-md:max-w-full">
                                 <div className="flex gap-2 whitespace-nowrap">
                                     <div>Solution</div>
                                     <img
