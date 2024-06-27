@@ -62,10 +62,10 @@ const LoginModule = () => {
                                     className="shrink-0 max-w-full aspect-[3.7] w-[113px]"
                                 />
                             </div>
-                        </div>
-                        <div className="flex absolute text-[1.5vw] top-[85%] right-2/4 gap-4 self-center mt-14 max-md:mt-10">
-                            <div className="grow my-auto">Terms of Use</div>
-                            <div className="grow my-auto">Privacy Policy</div>
+                            <div className="flex absolute text-[1.5vw] top-[90%] left-[15%] gap-4 self-center mt-14 max-md:mt-10">
+                                <div className="grow my-auto">Terms of Use</div>
+                                <div className="grow my-auto">Privacy Policy</div>
+                            </div>
                         </div>
                     </div>
                 </div>
