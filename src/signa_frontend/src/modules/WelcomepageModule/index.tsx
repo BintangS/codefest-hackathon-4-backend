@@ -41,7 +41,7 @@ const HomepageModule = () => {
                                     <img
                                         loading="lazy"
                                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 w-6 aspect-square"
+                                        className="shrink-0 w-[1.5vw] aspect-square"
                                     />
                                 </div>
                                 <div className="flex gap-2 whitespace-nowrap">
@@ -49,7 +49,7 @@ const HomepageModule = () => {
                                     <img
                                         loading="lazy"
                                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 w-6 aspect-square"
+                                        className="shrink-0 w-[1.5vw] aspect-square"
                                     />
                                 </div>
                                 <div className="flex gap-2">
@@ -57,7 +57,7 @@ const HomepageModule = () => {
                                     <img
                                         loading="lazy"
                                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 w-6 aspect-square"
+                                        className="shrink-0 w-[1.5vw] aspect-square"
                                     />
                                 </div>
                             </div>
