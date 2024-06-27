@@ -9,7 +9,7 @@ import SidebarMenu from '../../components/SidebarMenu/SidebarMenu'
 const DashboardfileModule = () => {
     return (
         <div className="flex [width:inherit] gap-0 bg-white max-md:flex-wrap">
-            <SidebarMenu />
+            <SidebarMenu name={"dashboard"} />
             <div className="flex flex-col grow shrink-0 basis-0 w-fit max-md:max-w-full">
                 <div className="flex relative flex-col gap-2.5 items-start px-11 pt-6 pb-16 text-sm font-medium min-h-[134px] text-neutral-900 max-md:flex-wrap max-md:px-5">
                     <img

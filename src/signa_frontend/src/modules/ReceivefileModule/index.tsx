@@ -9,7 +9,7 @@ const ReceivefileModule = () => {
     return (
         <div className="flex [width:inherit] gap-5 justify-normal bg-white max-md:flex-wrap">
             <div className="flex w-[20%] gap-0">
-                <SidebarMenu />
+                <SidebarMenu name={"receive_pdf"} />
                 <div className="flex relative flex-col items-start px-11 pt-6 pb-20 aspect-[0.1] w-[101px]">
                     <img
                         loading="lazy"
