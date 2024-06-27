@@ -13,7 +13,7 @@ import AssetDownWelcomePage from '../../assets/AssetDown-WelcomePage.webp'
 
 const HomepageModule = () => {
     return (
-        <div className="[width:inherit] flex flex-col items-center bg-white">
+        <div className="relative [width:inherit] flex flex-col items-center bg-white">
             <div className="flex overflow-hidden relative flex-col justify-center self-stretch w-full max-md:max-w-full">
                 <img
                     loading="lazy"
@@ -89,22 +89,22 @@ const HomepageModule = () => {
                 <img
                     loading="lazy"
                     src={PeruriLogo}
-                    className="aspect-[3.33] h-[60px]"
+                    className="aspect-[3.33] max-h-[60px]"
                 />
                 <img
                     loading="lazy"
                     src={KominfoLogo}
-                    className="my-auto aspect-[3.23] h-[60px]"
+                    className="my-auto aspect-[3.23] max-h-[60px]"
                 />
                 <img
                     loading="lazy"
                     src={WelcomeLegalLogo}
-                    className="shrink-0 h-[60px] aspect-square"
+                    className="shrink-0 max-h-[60px] aspect-square"
                 />
                 <img
                     loading="lazy"
                     src={DJBLogo}
-                    className="shrink-0 my-auto max-w-full aspect-[2.44] h-[60px]"
+                    className="shrink-0 my-auto max-w-full aspect-[2.44] max-h-[60px]"
                 />
             </div>
             <div className="w-full md:mt-10 md:max-w-full">
@@ -127,9 +127,9 @@ const HomepageModule = () => {
                                         />
                                     </div>
                                 </Link>
-                                <Link to={'/upload'}>
+                                <Link to={'/dashboard'}>
                                     <div className="flex-auto self-stretch my-auto text-cyan-600">
-                                        Upload Now
+                                        View Dashboard
                                     </div>
                                 </Link>
                                 <img
@@ -142,8 +142,8 @@ const HomepageModule = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full md:mt-10 md:max-w-full">
-                <div className="relative inline-block bottom-[0] left-[0] z-10">
+            <div className="absolute bottom-[0] left-[0] w-full md:mt-10 md:max-w-full">
+                {/* <div className="relative inline-block bottom-[0] left-[0] z-10"> */}
                     <img
                         loading="lazy"
                         src={AssetDownWelcomePage}
@@ -159,7 +159,7 @@ const HomepageModule = () => {
                         src={AssetPhoneHalf}
                         className="absolute w-2/5 -top-[224px] left-[480px] object-cover absolute inset-0"
                     />
-                </div>
+                {/* </div> */}
             </div>
         </div>
     );
