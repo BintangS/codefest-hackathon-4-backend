@@ -13,7 +13,7 @@ import AssetDownWelcomePage from '../../assets/AssetDown-WelcomePage.webp'
 
 const HomepageModule = () => {
     return (
-        <div className="relative [width:inherit] flex flex-col items-center bg-white">
+        <div className="relative [height:inherit] [width:inherit] flex flex-col items-center bg-white">
             <div className="flex overflow-hidden relative flex-col justify-center self-stretch w-full max-md:max-w-full">
                 <img
                     loading="lazy"
@@ -85,26 +85,26 @@ const HomepageModule = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex gap-24 justify-around px-5 md:flex-wrap mt-10">
+            <div className="flex [height:inherit] gap-24 justify-around px-5 md:flex-wrap mt-10">
                 <img
                     loading="lazy"
                     src={PeruriLogo}
-                    className="aspect-[3.33] max-h-[60px]"
+                    className="aspect-[3.33] h-[3rem]"
                 />
                 <img
                     loading="lazy"
                     src={KominfoLogo}
-                    className="my-auto aspect-[3.23] max-h-[60px]"
+                    className="my-auto aspect-[3.23] h-[3rem]"
                 />
                 <img
                     loading="lazy"
                     src={WelcomeLegalLogo}
-                    className="shrink-0 max-h-[60px] aspect-square"
+                    className="shrink-0 aspect-square h-[3rem]"
                 />
                 <img
                     loading="lazy"
                     src={DJBLogo}
-                    className="shrink-0 my-auto max-w-full aspect-[2.44] max-h-[60px]"
+                    className="shrink-0 my-auto max-w-full aspect-[2.44] h-[3rem]"
                 />
             </div>
             <div className="w-full mb-[40px] ml-[50px] max-w-full">
