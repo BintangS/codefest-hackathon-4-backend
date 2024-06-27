@@ -14,7 +14,7 @@ import BorderIconBlue from '../../assets/sidebar/border-icon-blue.png'
 const ReceivefileModule = () => {
     return (
         <div className="flex [width:inherit] gap-5 justify-normal bg-white max-md:flex-wrap">
-            <div className="flex w-[10%] gap-0">
+            <div className="flex w-[20%] gap-0">
                 <div className="flex flex-col items-start px-6 py-11 w-[70px] max-w-[85px] bg-[linear-gradient(180deg,_#121212_0%,_#002636_100%)]">
                     <img
                         loading="lazy"

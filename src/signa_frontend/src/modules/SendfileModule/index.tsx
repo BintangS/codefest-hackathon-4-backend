@@ -14,7 +14,7 @@ import BorderIconBlue from '../../assets/sidebar/border-icon-blue.png'
 const SendfileModule = () => {
     return (
         <div className="flex [width:inherit] gap-5 justify-normal bg-white max-md:flex-wrap">
-            <div className="flex w-[10%] gap-0">
+            <div className="flex w-[20%] gap-0">
                 <div className="flex flex-col items-start px-6 py-11 w-[70px] max-w-[85px] bg-[linear-gradient(180deg,_#121212_0%,_#002636_100%)]">
                     <img
                         loading="lazy"
@@ -80,7 +80,7 @@ const SendfileModule = () => {
                 </div>
             </div>
             <div className="flex w-[90%] gap-5 justify-center max-md:flex-wrap max-md:max-w-full">
-                <div className="flex [width:inherit] flex-col px-5 my-auto max-md:max-w-full">
+                <div className="flex [width:inherit] mt-[100px] flex-col px-5 my-auto max-md:max-w-full">
                     <div className="flex justify-center items-center px-16 py-20 text-lg rounded-xl border border-solid bg-zinc-100 border-zinc-800 text-neutral-400 max-md:px-5 max-md:max-w-full">
                         <div className="flex flex-col mt-11 mb-5 max-w-full w-[168px] max-md:mt-10">
                             <img
