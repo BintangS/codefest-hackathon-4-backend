@@ -84,14 +84,17 @@ const ReceivefileModule = () => {
                     <div className="self-center text-3xl font-medium leading-10 text-center text-black max-md:max-w-full">
                         You Receive PDF from {'{'}  Internet Identity ID {'}'} to sign ....
                     </div>
-                    <div className="flex flex-col items-center px-7 pt-20 pb-6 mt-14 text-lg rounded-xl border border-solid bg-zinc-100 border-zinc-800 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                    <div className="flex flex-col items-center px-7 pt-20 pb-6 mt-14 text-lg font-semibold rounded-xl border border-solid bg-zinc-100 border-zinc-800 max-md:px-5 max-md:mt-10 max-md:max-w-full">
                         <img
                             loading="lazy"
                             src={DocumentLogo}
                             className="mt-20 aspect-square w-[88px] max-md:mt-10"
                         />
                         <div className="mt-5 text-neutral-400">Your Document</div>
-                        <div className="justify-center items-center self-stretch px-16 py-6 mt-36 font-semibold text-center bg-cyan-200 rounded-md border border-solid border-zinc-800 text-stone-600 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                        <div className="mt-28 text-center text-neutral-900 max-md:mt-10">
+                            Your Document has been e-signed
+                        </div>
+                        <div className="justify-center items-center self-stretch px-16 py-6 mt-5 text-center bg-sky-200 rounded-md border border-solid border-zinc-800 text-stone-600 max-md:px-5 max-md:max-w-full">
                             Sign Document
                         </div>
                     </div>
