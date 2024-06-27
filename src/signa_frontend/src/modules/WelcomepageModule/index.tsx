@@ -107,18 +107,18 @@ const HomepageModule = () => {
                     className="shrink-0 my-auto max-w-full aspect-[2.44] max-h-[60px]"
                 />
             </div>
-            <div className="w-full md:mt-10 md:max-w-full">
+            <div className="w-full mb-[40px] ml-[50px] max-w-full">
                 <div className="flex mb-[50px] gap-5 max-md:flex-col max-md:gap-0">
                     <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                         <div className="flex flex-col grow px-5 mt-20 max-md:mt-10 max-md:max-w-full">
-                            <div className="text-left text-[1rem] font-bold text-black max-md:max-w-full">
+                            <div className="text-left text-[2vw] font-bold text-black max-md:max-w-full">
                                 Conveniently eSign your document and safely secure the eDocs
                                 with Web 3.0 SCP. You will have stronger security protection of
                                 your document
                             </div>
                             <div className="text-[1rem] flex gap-5 items-center self-start mt-9 text-center">
                                 <Link to={'/login'}>
-                                    <div className="flex gap-2.5 justify-center self-stretch p-2.5 text-white bg-cyan-600 rounded-xl shadow-sm">
+                                    <div className="flex text-[1.5vw] gap-2.5 justify-center self-stretch p-3.5 text-white bg-cyan-600 rounded-xl shadow-sm">
                                         <div>Sign in Now!</div>
                                         <img
                                             loading="lazy"
@@ -128,7 +128,7 @@ const HomepageModule = () => {
                                     </div>
                                 </Link>
                                 <Link to={'/dashboard'}>
-                                    <div className="flex-auto self-stretch my-auto text-cyan-600">
+                                    <div className="flex-auto text-[1.5vw] self-stretch my-auto text-cyan-600">
                                         View Dashboard
                                     </div>
                                 </Link>
@@ -142,24 +142,22 @@ const HomepageModule = () => {
                     </div>
                 </div>
             </div>
-            <div className="absolute bottom-[0] left-[0] w-full md:mt-10 md:max-w-full">
-                {/* <div className="relative inline-block bottom-[0] left-[0] z-10"> */}
-                    <img
-                        loading="lazy"
-                        src={AssetDownWelcomePage}
-                        className="w-full"
-                    />
-                    <img
-                        loading="lazy"
-                        src={RoboSigna}
-                        className="absolute w-1/5 -top-[76px] left-[310px] self-end mt-3.5 max-w-full aspect-[0.99]"
-                    />
-                    <img
-                        loading="lazy"
-                        src={AssetPhoneHalf}
-                        className="absolute w-2/5 -top-[224px] left-[480px] object-cover absolute inset-0"
-                    />
-                {/* </div> */}
+            <div className="w-full md:mt-10 md:max-w-full">
+                <img
+                    loading="lazy"
+                    src={AssetDownWelcomePage}
+                    className="w-full"
+                />
+                <img
+                    loading="lazy"
+                    src={RoboSigna}
+                    className="absolute w-1/5 bottom-[0] right-[40%] self-end mt-3.5 max-w-full aspect-[0.99]"
+                />
+                <img
+                    loading="lazy"
+                    src={AssetPhoneHalf}
+                    className="absolute w-2/5 bottom-[0] right-[5%] max-w-[35%] object-cover"
+                />
             </div>
         </div>
     );
