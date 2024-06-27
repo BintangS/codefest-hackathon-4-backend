@@ -79,43 +79,41 @@ const SendfileModule = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex w-[90%] flex-col ml-5 max-md:ml-0 max-md:w-full">
-                <div className="flex [width:inherit] grow gap-5 justify-center max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
-                    <div className="flex w-[80%] flex-col my-auto max-md:max-w-full">
-                        <div className="flex justify-center items-center px-16 py-20 text-lg rounded-xl border border-solid bg-zinc-100 border-zinc-800 text-neutral-400 max-md:px-5 max-md:max-w-full">
-                            <div className="flex flex-col mt-11 mb-5 max-w-full w-[168px] max-md:mt-10">
-                                <img
-                                    loading="lazy"
-                                    src={DocumentLogo}
-                                    className="self-center aspect-square w-[88px]"
-                                />
-                                <div className="mt-5">Add your Document</div>
+            <div className="flex w-[90%] gap-5 justify-center max-md:flex-wrap max-md:max-w-full">
+                <div className="flex [width:inherit] flex-col px-5 my-auto max-md:max-w-full">
+                    <div className="flex justify-center items-center px-16 py-20 text-lg rounded-xl border border-solid bg-zinc-100 border-zinc-800 text-neutral-400 max-md:px-5 max-md:max-w-full">
+                        <div className="flex flex-col mt-11 mb-5 max-w-full w-[168px] max-md:mt-10">
+                            <img
+                                loading="lazy"
+                                src={DocumentLogo}
+                                className="self-center aspect-square w-[88px]"
+                            />
+                            <div className="mt-5">Add your Document</div>
+                        </div>
+                    </div>
+                    <div className="flex gap-5 mt-20 max-md:flex-wrap max-md:mt-10">
+                        <div className="flex flex-col grow shrink-0 w-[45%]">
+                            <div className="text-lg font-medium text-center text-neutral-900">
+                                Internet Identity
+                            </div>
+                            <div className="justify-center items-start px-6 py-7 mt-5 text-center rounded-xl border border-solid bg-zinc-100 border-zinc-800 text-neutral-400 max-md:px-5">
+                                Enter Internet Identity
                             </div>
                         </div>
-                        <div className="flex gap-5 mt-20 max-md:flex-wrap max-md:mt-10">
-                            <div className="flex flex-col grow shrink-0 w-[45%]">
-                                <div className="text-lg font-medium text-center text-neutral-900">
-                                    Internet Identity
-                                </div>
-                                <div className="justify-center items-start px-6 py-7 mt-5 text-center rounded-xl border border-solid bg-zinc-100 border-zinc-800 text-neutral-400 max-md:px-5">
-                                    Enter Internet Identity
-                                </div>
-                            </div>
-                            <div className="flex flex-col shrink-0 text-lg w-fit">
-                                <div className="my-auto text-base text-center text-black">
-                                    OR
-                                </div>
-                            </div>
-                            <div className="flex flex-col grow shrink-0 w-[45%]">
-                                <div className="text-lg font-medium text-center text-neutral-900">Email</div>
-                                <div className="justify-center items-start px-6 py-7 mt-5 text-center rounded-xl border border-solid bg-zinc-100 border-zinc-800 text-neutral-400 max-md:px-5">
-                                    Enter Email
-                                </div>
+                        <div className="flex flex-col shrink-0 text-lg w-fit">
+                            <div className="my-auto text-base text-center text-black">
+                                OR
                             </div>
                         </div>
-                        <div className="justify-center items-center px-16 py-7 mt-20 text-lg font-semibold text-center whitespace-nowrap bg-sky-200 rounded-xl border border-solid border-zinc-800 text-stone-600 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-                            Send
+                        <div className="flex flex-col grow shrink-0 w-[45%]">
+                            <div className="text-lg font-medium text-center text-neutral-900">Email</div>
+                            <div className="justify-center items-start px-6 py-7 mt-5 text-center rounded-xl border border-solid bg-zinc-100 border-zinc-800 text-neutral-400 max-md:px-5">
+                                Enter Email
+                            </div>
                         </div>
+                    </div>
+                    <div className="justify-center items-center px-16 py-7 mt-20 text-lg font-semibold text-center whitespace-nowrap bg-sky-200 rounded-xl border border-solid border-zinc-800 text-stone-600 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                        Send
                     </div>
                 </div>
             </div>
