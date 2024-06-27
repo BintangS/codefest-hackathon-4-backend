@@ -61,7 +61,7 @@ const HomepageModule = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="justify-center self-stretch p-2.5 my-auto text-lg text-center text-white whitespace-nowrap bg-cyan-600 rounded-xl">
+                            <div className="justify-center self-stretch p-2.5 my-auto text-[1.5vw] text-center text-white whitespace-nowrap bg-cyan-600 rounded-xl">
                                 Contact
                             </div>
                         </div>
