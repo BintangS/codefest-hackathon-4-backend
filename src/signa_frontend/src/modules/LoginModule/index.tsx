@@ -5,6 +5,7 @@ import RoboLoginPageImage from '../../assets/Robo-LoginPage.webp'
 import SignaLogo1 from '../../assets/SignaLogo_v1.png'
 import SignaSignature from '../../assets/SignaSignature.png'
 import InternetIdentityLogo from '../../assets/InternetIdentityLogo.png'
+import { Link } from 'react-router-dom'
 
 const LoginModule = () => {
     const navigate = useNavigate()
@@ -62,9 +63,10 @@ const LoginModule = () => {
                                     className="shrink-0 max-w-full aspect-[3.7] w-[113px]"
                                 />
                             </div>
-                            <div className="flex absolute text-[1.5vw] top-[90%] left-[15%] gap-4 self-center mt-14 max-md:mt-10">
-                                <div className="grow my-auto">Terms of Use</div>
-                                <div className="grow my-auto">Privacy Policy</div>
+                            <div className="flex absolute text-[1.5vw] md:top-[30%] lg:top-[40%] right-0 gap-4 self-center mt-12 2xl:mt-14 xl:mt-6">
+                                <Link to="/privacy">
+                                    <div className="grow my-auto">Privacy and T&C</div>
+                                </Link>
                             </div>
                         </div>
                     </div>

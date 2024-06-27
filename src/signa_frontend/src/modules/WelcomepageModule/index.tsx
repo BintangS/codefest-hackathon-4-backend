@@ -8,7 +8,7 @@ import PeruriLogo from '../../assets/PeruriLogo.png'
 import InternetIdentityLogo2 from '../../assets/InternetIdentityLogo2.png'
 import SignaSignatureWhite from '../../assets/SignaSignatureWhite.png'
 import SignaLogo from '../../assets/SignaLogo_v1.png'
-import BackgroundWelcomePage from '../../assets/BG-WelcomePage.webp'
+import BackgroundWelcomePage from '../../assets/BG-WelcomePage-1080p.png'
 import AssetDownWelcomePage from '../../assets/AssetDown-WelcomePage.webp'
 
 const HomepageModule = () => {
@@ -18,7 +18,7 @@ const HomepageModule = () => {
                 <img
                     loading="lazy"
                     src={BackgroundWelcomePage}
-                    className="object-cover absolute [width:inherit]"
+                    className="object-cover absolute w-[100%] h-[100%]"
                 />
                 <div className="flex relative flex-col items-center px-16 pt-11 pb-12 w-full max-md:px-5 max-md:max-w-full">
                     <div className="flex flex-col mb-28 w-full max-md:mb-10 max-md:max-w-full">
@@ -36,14 +36,16 @@ const HomepageModule = () => {
                                 />
                             </div>
                             <div className="flex gap-5 justify-between self-stretch my-auto text-[1.5vw] text-center text-white max-md:flex-wrap max-md:max-w-full">
-                                <div className="flex gap-2 whitespace-nowrap">
-                                    <div>Solution</div>
-                                    <img
-                                        loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 w-[1.5vw] aspect-square"
-                                    />
-                                </div>
+                                <Link to="/dashboard">
+                                    <div className="flex gap-2 whitespace-nowrap">
+                                        <div>Homepage</div>
+                                        <img
+                                            loading="lazy"
+                                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                            className="shrink-0 w-[1.5vw] aspect-square"
+                                        />
+                                    </div>
+                                </Link>
                                 <div className="flex gap-2 whitespace-nowrap">
                                     <div>Product</div>
                                     <img
@@ -107,9 +109,9 @@ const HomepageModule = () => {
                     className="shrink-0 my-auto max-w-full aspect-[2.44] h-[3rem]"
                 />
             </div>
-            <div className="w-full mb-[40px] ml-[50px] max-w-full">
+            <div className="w-full mb-[40px] max-w-full">
                 <div className="flex mb-[50px] gap-5 max-md:flex-col max-md:gap-0">
-                    <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                    <div className="flex flex-col pl-[5%] w-6/12 max-md:ml-0 max-md:w-full">
                         <div className="flex flex-col grow px-5 mt-20 max-md:mt-10 max-md:max-w-full">
                             <div className="text-left text-[2vw] font-bold text-black max-md:max-w-full">
                                 Conveniently eSign your document and safely secure the eDocs
@@ -125,11 +127,6 @@ const HomepageModule = () => {
                                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/d919ff89240ed9ab1818042f71150953ee8b18134214f4ac401580295703695b?apiKey=77b90fc2290346248c9501f26423abd9&"
                                             className="shrink-0 w-6 aspect-square"
                                         />
-                                    </div>
-                                </Link>
-                                <Link to={'/dashboard'}>
-                                    <div className="flex-auto text-[1.5vw] self-stretch my-auto text-cyan-600">
-                                        View Dashboard
                                     </div>
                                 </Link>
                                 <img
