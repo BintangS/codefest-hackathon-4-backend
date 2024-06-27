@@ -12,6 +12,7 @@ import { ThemeProvider } from './components/themeProvider';
 import LoginModule from './modules/LoginModule/index.tsx';
 import ReceivefileModule from './modules/ReceivefileModule/index.tsx';
 import SendfileModule from './modules/SendfileModule/index.tsx';
+import DashboardfileModule from './modules/DashboardModule/index.tsx';
 
 // Set the workerSrc to the imported worker
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <LoginModule />
+      },
+      {
+        path: '/dashboard',
+        element: <DashboardfileModule />
       },
       {
         path: '/upload',

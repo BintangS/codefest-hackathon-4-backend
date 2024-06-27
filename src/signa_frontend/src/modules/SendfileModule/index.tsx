@@ -84,12 +84,12 @@ const SendfileModule = () => {
                     <div className="flex flex-col my-auto max-md:max-w-full">
                         <div className="flex min-w-[122%] justify-center items-center px-16 py-20 text-lg rounded-xl border border-solid bg-zinc-100 border-zinc-800 text-neutral-400 max-md:px-5 max-md:max-w-full">
                             <div className="flex flex-col mt-11 mb-5 max-w-full w-[168px] max-md:mt-10">
-                            <img
-                                loading="lazy"
-                                src={DocumentLogo}
-                                className="self-center aspect-square w-[88px]"
-                            />
-                            <div className="mt-5">Add your Document</div>
+                                <img
+                                    loading="lazy"
+                                    src={DocumentLogo}
+                                    className="self-center aspect-square w-[88px]"
+                                />
+                                <div className="mt-5">Add your Document</div>
                             </div>
                         </div>
                         <div className="flex gap-5 mt-20 max-md:flex-wrap max-md:mt-10">
@@ -118,9 +118,9 @@ const SendfileModule = () => {
                         </div>
                     </div>
                     <img
-                    loading="lazy"
-                    src={AssetRightSendPage}
-                    className="shrink-0 max-w-full aspect-[0.1] w-[100px]"
+                        loading="lazy"
+                        src={AssetRightSendPage}
+                        className="shrink-0 max-w-full aspect-[0.1] w-[100px]"
                     />
                 </div>
             </div>

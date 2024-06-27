@@ -86,9 +86,9 @@ const ReceivefileModule = () => {
                     </div>
                     <div className="flex flex-col items-center px-7 pt-20 pb-6 mt-14 text-lg rounded-xl border border-solid bg-zinc-100 border-zinc-800 max-md:px-5 max-md:mt-10 max-md:max-w-full">
                         <img
-                        loading="lazy"
-                        src={DocumentLogo}
-                        className="mt-20 aspect-square w-[88px] max-md:mt-10"
+                            loading="lazy"
+                            src={DocumentLogo}
+                            className="mt-20 aspect-square w-[88px] max-md:mt-10"
                         />
                         <div className="mt-5 text-neutral-400">Your Document</div>
                         <div className="justify-center items-center self-stretch px-16 py-6 mt-36 font-semibold text-center bg-cyan-200 rounded-md border border-solid border-zinc-800 text-stone-600 max-md:px-5 max-md:mt-10 max-md:max-w-full">
@@ -97,9 +97,9 @@ const ReceivefileModule = () => {
                     </div>
                 </div>
                 <img
-                loading="lazy"
-                src={AssetRightReceivePage}
-                className="shrink-0 max-w-full aspect-[0.1] w-[101px]"
+                    loading="lazy"
+                    src={AssetRightReceivePage}
+                    className="shrink-0 max-w-full aspect-[0.1] w-[101px]"
                 />
             </div>
         </div>

@@ -140,11 +140,6 @@ const HomepageModule = () => {
                         </div>                    
                         </div>
                     </div>
-                    {/* <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-                        <div className="flex overflow-hidden relative flex-col grow justify-center items-end px-16 py-20 min-h-[621px] max-md:px-5 max-md:max-w-full">
-                            
-                        </div>
-                    </div> */}
                 </div>
             </div>
             <div className="w-full max-w-[1317px] max-md:mt-10 max-md:max-w-full">
