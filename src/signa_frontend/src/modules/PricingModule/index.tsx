@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom'
 import SignaSignature from '../../assets/SignaSignature.png'
 import SignaLogo from '../../assets/SignaLogo_v1.png'
 import BorderLogoCard from '../../assets/BorderIcon-PricingPage.png'
 
 const PricingModule = () => {
     return (
-        <div className="flex flex-col items-center pt-11 pb-20 bg-white">
+        <div className="flex flex-col items-center pt-11 pb-20 bg-[linear-gradient(180deg,_#FFF_0%,_#7AC4E2_100%)]">
             <div className="flex gap-5 justify-between items-center px-5 w-full max-md:flex-wrap max-md:max-w-full">
                 <div className="flex gap-0 self-stretch">
                     <img
@@ -19,30 +20,36 @@ const PricingModule = () => {
                     />
                 </div>
                 <div className="flex gap-5 justify-between self-stretch my-auto text-[1.5vw] text-center text-neutral-900 max-md:flex-wrap max-md:max-w-full">
-                    <div className="flex gap-2 whitespace-nowrap">
-                        <div>Homepage</div>
-                        <img
-                            loading="lazy"
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd64f0122aa24978678434d8320b1bd47a2c24a416f0a9e55d92db19d51832b5?apiKey=77b90fc2290346248c9501f26423abd9&"
-                            className="shrink-0 w-[1.5vw] aspect-square"
-                        />
-                    </div>
-                    <div className="flex gap-2 whitespace-nowrap">
-                        <div>Product</div>
-                        <img
-                            loading="lazy"
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd64f0122aa24978678434d8320b1bd47a2c24a416f0a9e55d92db19d51832b5?apiKey=77b90fc2290346248c9501f26423abd9&"
-                            className="shrink-0 w-[1.5vw] aspect-square"
-                        />
-                    </div>
-                    <div className="flex gap-2 font-semibold">
-                        <div>Plan & Pricing</div>
-                        <img
-                            loading="lazy"
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd64f0122aa24978678434d8320b1bd47a2c24a416f0a9e55d92db19d51832b5?apiKey=77b90fc2290346248c9501f26423abd9&"
-                            className="shrink-0 w-[1.5vw] aspect-square"
-                        />
-                    </div>
+                    <Link to="/">
+                        <div className="flex gap-2 whitespace-nowrap">
+                            <div>Homepage</div>
+                            <img
+                                loading="lazy"
+                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd64f0122aa24978678434d8320b1bd47a2c24a416f0a9e55d92db19d51832b5?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                className="shrink-0 w-[1.5vw] aspect-square"
+                            />
+                        </div>
+                    </Link>
+                    <Link to="/product">
+                        <div className="flex gap-2 whitespace-nowrap">
+                            <div>Product</div>
+                            <img
+                                loading="lazy"
+                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd64f0122aa24978678434d8320b1bd47a2c24a416f0a9e55d92db19d51832b5?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                className="shrink-0 w-[1.5vw] aspect-square"
+                            />
+                        </div>
+                    </Link>
+                    <Link to="/pricing">
+                        <div className="flex gap-2 font-semibold">
+                            <div>Plan & Pricing</div>
+                            <img
+                                loading="lazy"
+                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd64f0122aa24978678434d8320b1bd47a2c24a416f0a9e55d92db19d51832b5?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                className="shrink-0 w-[1.5vw] aspect-square"
+                            />
+                        </div>
+                    </Link>
                 </div>
                 <div className="justify-center self-stretch p-2.5 my-auto text-[1.5vw] text-center text-white whitespace-nowrap bg-cyan-600 rounded-xl">
                     Contact

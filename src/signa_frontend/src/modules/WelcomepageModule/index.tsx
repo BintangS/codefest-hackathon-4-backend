@@ -46,22 +46,26 @@ const HomepageModule = () => {
                                         />
                                     </div>
                                 </Link>
-                                <div className="flex gap-2 whitespace-nowrap">
-                                    <div>Product</div>
-                                    <img
-                                        loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 w-[1.5vw] aspect-square"
-                                    />
-                                </div>
-                                <div className="flex gap-2">
-                                    <div>Plan & Pricing</div>
-                                    <img
-                                        loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 w-[1.5vw] aspect-square"
-                                    />
-                                </div>
+                                <Link to="/product">
+                                    <div className="flex gap-2 whitespace-nowrap">
+                                        <div>Product</div>
+                                        <img
+                                            loading="lazy"
+                                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                            className="shrink-0 w-[1.5vw] aspect-square"
+                                        />
+                                    </div>
+                                </Link>
+                                <Link to="/pricing">
+                                    <div className="flex gap-2">
+                                        <div>Plan & Pricing</div>
+                                        <img
+                                            loading="lazy"
+                                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                            className="shrink-0 w-[1.5vw] aspect-square"
+                                        />
+                                    </div>
+                                </Link>
                             </div>
                             <div className="justify-center self-stretch p-2.5 my-auto text-[1.5vw] text-center text-white whitespace-nowrap bg-cyan-600 rounded-xl">
                                 Contact
