@@ -2,10 +2,15 @@ import { Link } from 'react-router-dom'
 import SignaSignature from '../../assets/SignaSignature.png'
 import SignaLogo from '../../assets/SignaLogo_v1.png'
 import BorderLogoCard from '../../assets/BorderIcon-PricingPage.png'
+import ICPMonoLogo from '../../assets/Logo ICP mono.png'
+import ICDriveLogo from '../../assets/Logo IC Drive.png'
+import AssetTickIcon from '../../assets/Assets Tick.png'
+import BGDownPricingPage from '../../assets/BG Down - Pricing Page.png'
+import BGImagePricingPage from '../../assets/Assets center - Pricing Page.png'
 
 const PricingModule = () => {
     return (
-        <div className="flex flex-col items-center pt-11 pb-20 bg-[linear-gradient(180deg,_#FFF_0%,_#7AC4E2_100%)]">
+        <div className="flex overflow-hidden relative flex-col items-center pt-11 pb-20 bg-[linear-gradient(180deg,_#FFF_0%,_#7AC4E2_100%)]">
             <div className="flex gap-5 justify-between items-center px-5 w-full max-md:flex-wrap max-md:max-w-full">
                 <div className="flex gap-0 self-stretch">
                     <img
@@ -55,7 +60,7 @@ const PricingModule = () => {
                     Contact
                 </div>
             </div>
-            <div className="text-[3rem] mt-[5%] pb-[50%] justify-center items-center self-stretch w-full text-center text-neutral-900 max-md:px-5 max-md:pb-10 max-md:max-w-full max-md:text-4xl">
+            <div className="text-[3rem] mt-[5%] pb-[30%] mb-[20%] justify-center items-center self-stretch w-full text-center text-neutral-900 max-md:px-5 max-md:pb-10 max-md:max-w-full max-md:text-4xl">
                 Choose Your Plan
             </div>
             <div className="z-10 px-5 mt-0 w-full max-md:max-w-full">
@@ -73,7 +78,7 @@ const PricingModule = () => {
                                 <div className="flex gap-1 text-[3.5rem] w-[60%] whitespace-nowrap leading-[128px] text-neutral-900 max-md:text-4xl">
                                     <img
                                         loading="lazy"
-                                        srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                        src={ICPMonoLogo}
                                         className="max-w-[fit-content] w-2/5 h-2/5 mt-[20%]"
                                     />
                                     <div className="flex-auto my-auto max-md:text-4xl">0.3</div>
@@ -94,27 +99,27 @@ const PricingModule = () => {
                                 <div className="self-start mt-[10%] leading-5 text-center text-neutral-900 max-md:ml-2.5">
                                     Core feature include
                                 </div>
-                                <div className="text-left flex gap-5 justify-normal self-start mt-6 leading-5 text-neutral-900 max-md:ml-2.5">
+                                <div className="text-left mb-[5%] flex gap-5 justify-normal self-start mt-6 leading-5 text-neutral-900 max-md:ml-2.5">
                                     <img
                                         loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff6b599fb21e579d47e62245f8067463015d76a12014bcd63c021250fc9a629e?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[11px]"
+                                        src={AssetTickIcon}
+                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[20px]"
                                     />
                                     <div>500+ Documents</div>
                                 </div>
-                                <div className="text-left flex gap-5 justify-normal self-start mt-1 leading-5 text-neutral-900 max-md:ml-2.5">
+                                <div className="text-left mb-[5%] flex gap-5 justify-normal self-start mt-1 leading-5 text-neutral-900 max-md:ml-2.5">
                                     <img
                                         loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff6b599fb21e579d47e62245f8067463015d76a12014bcd63c021250fc9a629e?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[11px]"
+                                        src={AssetTickIcon}
+                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[20px]"
                                     />
                                     <div>Mass Upload Feature</div>
                                 </div>
-                                <div className="text-left flex gap-5 justify-normal mt-1 leading-5 text-neutral-900 max-md:mx-2.5">
+                                <div className="text-left mb-[5%] flex gap-5 justify-normal mt-1 leading-5 text-neutral-900 max-md:mx-2.5">
                                     <img
                                         loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff6b599fb21e579d47e62245f8067463015d76a12014bcd63c021250fc9a629e?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[11px]"
+                                        src={AssetTickIcon}
+                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[20px]"
                                     />
                                     <div>100+ ICP DApps Ecosystem Integration</div>
                                 </div>
@@ -145,7 +150,7 @@ const PricingModule = () => {
                                 <div className="flex gap-1 text-[3.5rem] w-[60%] whitespace-nowrap leading-[128px] text-neutral-900 max-md:text-4xl">
                                     <img
                                         loading="lazy"
-                                        srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                        src={ICPMonoLogo}
                                         className="max-w-[fit-content] w-2/5 h-2/5 mt-[20%]"
                                     />
                                     <div className="flex-auto my-auto max-md:text-4xl">0.5</div>
@@ -166,27 +171,27 @@ const PricingModule = () => {
                                 <div className="self-start mt-[10%] leading-5 text-center text-neutral-900 max-md:ml-2.5">
                                     Personal feature include
                                 </div>
-                                <div className="text-left flex gap-5 justify-normal self-start mt-6 leading-5 text-neutral-900 max-md:ml-2.5">
+                                <div className="text-left mb-[5%] flex gap-5 justify-normal self-start mt-6 leading-5 text-neutral-900 max-md:ml-2.5">
                                     <img
                                         loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff6b599fb21e579d47e62245f8067463015d76a12014bcd63c021250fc9a629e?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[11px]"
+                                        src={AssetTickIcon}
+                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[20px]"
                                     />
                                     <div>1000+ Documents</div>
                                 </div>
-                                <div className="text-left flex gap-5 justify-normal self-start mt-1 leading-5 text-neutral-900 max-md:ml-2.5">
+                                <div className="text-left mb-[5%] flex gap-5 justify-normal self-start mt-1 leading-5 text-neutral-900 max-md:ml-2.5">
                                     <img
                                         loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff6b599fb21e579d47e62245f8067463015d76a12014bcd63c021250fc9a629e?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[11px]"
+                                        src={AssetTickIcon}
+                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[20px]"
                                     />
                                     <div>Double Encrypted Document Access</div>
                                 </div>
-                                <div className="text-left flex gap-5 justify-normal mt-1 leading-5 text-neutral-900 max-md:mx-2.5">
+                                <div className="text-left mb-[5%] flex gap-5 justify-normal mt-1 leading-5 text-neutral-900 max-md:mx-2.5">
                                     <img
                                         loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff6b599fb21e579d47e62245f8067463015d76a12014bcd63c021250fc9a629e?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[11px]"
+                                        src={AssetTickIcon}
+                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[20px]"
                                     />
                                     <div>Restore & BackUp Features</div>
                                 </div>
@@ -209,7 +214,7 @@ const PricingModule = () => {
                                 <div className="flex gap-1 text-[3.5rem] w-[60%] whitespace-nowrap leading-[128px] text-neutral-900 max-md:text-4xl">
                                     <img
                                         loading="lazy"
-                                        srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/29e501ebde2a263ee7708984ddb3299a37c045254f2dee2d385c37a6672c1a56?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                        src={ICPMonoLogo}
                                         className="max-w-[fit-content] w-2/5 h-2/5 mt-[20%]"
                                     />
                                     <div className="flex-auto my-auto max-md:text-4xl">0.7</div>
@@ -230,27 +235,27 @@ const PricingModule = () => {
                                 <div className="self-start mt-[10%] leading-5 text-center text-neutral-900 max-md:ml-2.5">
                                     Core & Personal feature include
                                 </div>
-                                <div className="text-left flex gap-5 justify-normal self-start mt-6 leading-5 text-neutral-900 max-md:ml-2.5">
+                                <div className="text-left mb-[5%] flex gap-5 justify-normal self-start mt-6 leading-5 text-neutral-900 max-md:ml-2.5">
                                     <img
                                         loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff6b599fb21e579d47e62245f8067463015d76a12014bcd63c021250fc9a629e?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[11px]"
+                                        src={AssetTickIcon}
+                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[20px]"
                                     />
                                     <div>5000+ Documents</div>
                                 </div>
-                                <div className="text-left flex gap-5 justify-normal self-start mt-1 leading-5 text-neutral-900 max-md:ml-2.5">
+                                <div className="text-left mb-[5%] flex gap-5 justify-normal self-start mt-1 leading-5 text-neutral-900 max-md:ml-2.5">
                                     <img
                                         loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff6b599fb21e579d47e62245f8067463015d76a12014bcd63c021250fc9a629e?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[11px]"
+                                        src={AssetTickIcon}
+                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[20px]"
                                     />
                                     <div>Platinum Live Agent Call Support</div>
                                 </div>
-                                <div className="text-left flex gap-5 justify-normal mt-1 leading-5 text-neutral-900 max-md:mx-2.5">
+                                <div className="text-left mb-[5%] flex gap-5 justify-normal mt-1 leading-5 text-neutral-900 max-md:mx-2.5">
                                     <img
                                         loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff6b599fb21e579d47e62245f8067463015d76a12014bcd63c021250fc9a629e?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[11px]"
+                                        src={AssetTickIcon}
+                                        className="shrink-0 my-auto border-2 border-solid aspect-[1.37] border-zinc-800 stroke-[1.8px] stroke-zinc-800 w-[20px]"
                                     />
                                     <div>
                                         100GB Storage at ICP Ecosystem{" "}
@@ -258,7 +263,7 @@ const PricingModule = () => {
                                         <span>
                                             <img
                                                 loading="lazy"
-                                                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                                src={ICDriveLogo}
                                                 className="max-w-full aspect-[2.63] w-[121px] max-md:ml-2.5"
                                             />
                                         </span>
@@ -272,6 +277,16 @@ const PricingModule = () => {
                     </div>
                 </div>
             </div>
+            <img
+                loading="lazy"
+                src={BGImagePricingPage}
+                className="flex justify-center w-auto absolute bottom-[50%]"
+            />
+            <img
+                loading="lazy"
+                src={BGDownPricingPage}
+                className="w-full absolute bottom-0 left-0 right-0 h-[50%]"
+            />
         </div>
     );
 };
