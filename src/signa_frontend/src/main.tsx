@@ -14,6 +14,7 @@ import ReceivefileModule from './modules/ReceivefileModule/index.tsx';
 import SendfileModule from './modules/SendfileModule/index.tsx';
 import DashboardfileModule from './modules/DashboardModule/index.tsx';
 import PrivacyModule from './modules/PrivacyModule/index.tsx';
+import ViewfileModule from './modules/ViewfileModule/index.tsx';
 
 // Set the workerSrc to the imported worker
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
 			{
 				path: '/privacy',
 				element: <PrivacyModule />
+			},
+			{
+				path: '/view_pdf',
+				element: <ViewfileModule />
 			}
 		],
 	},
