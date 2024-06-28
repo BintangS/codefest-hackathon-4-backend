@@ -4,6 +4,7 @@ import PeopleLogoWhite from '../../assets/PeopleLogoWhite.svg'
 import RoboSigna from '../../assets/RoboSigna.webp'
 import SignaLogo_v1 from '../../assets/SignaLogo_v1.png'
 import SignaSignature from '../../assets/SignaSignature.png'
+import HelloPeopleLogo from '../../assets/HelloPeople-DashboardPage.png'
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu'
 
 const DashboardfileModule = () => {
@@ -53,7 +54,7 @@ const DashboardfileModule = () => {
                             </div>
                         </div>
                         <div className="flex flex-col ml-5 w-[95%] max-md:ml-0 max-md:w-full">
-                            <div className="flex [width:inherit] z-10 flex-col grow mt-11 max-md:mt-10 max-md:max-w-full">
+                            <div className="flex relative [width:inherit] z-10 flex-col grow mt-11 max-md:mt-10 max-md:max-w-full">
                                 <div className="flex gap-5 w-full text-white max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
                                     <div className="flex-auto text-lg font-medium">
                                         All Document
@@ -187,6 +188,11 @@ const DashboardfileModule = () => {
                                         </tbody>
                                     </table>
                                 </div>
+                                <img
+                                    loading="lazy"
+                                    src={HelloPeopleLogo}
+                                    className="absolute bottom-0 -left-[40%] xl:-left-[30%] 2xl:-left-[20%] 3xl:-left-[10%] w-[50%] max-w-[400px] self-start mt-52 aspect-[1.05] max-md:mt-10"
+                                />
                                 <img
                                     loading="lazy"
                                     src={RoboSigna}
