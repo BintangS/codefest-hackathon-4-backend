@@ -83,7 +83,7 @@ const PricingModule = () => {
                                 src={BorderLogoCard}
                                 className="self-end max-w-full border border-solid border-zinc-400 stroke-[1px] stroke-zinc-400 w-full max-md:mr-2.5"
                             />
-                            <div className="min-h-[50px]">
+                            <div className="min-h-[270px]">
                                 <div className="self-start mt-[10%] leading-5 text-center text-neutral-900 max-md:ml-2.5">
                                     Core feature include
                                 </div>
@@ -112,7 +112,7 @@ const PricingModule = () => {
                                     <div>100+ ICP DApps Ecosystem Integration</div>
                                 </div>
                             </div>
-                            <div className="justify-center items-center px-16 py-5 mt-16 font-medium text-center text-white bg-cyan-900 rounded-xl max-md:px-5 max-md:mt-10">
+                            <div className="justify-center items-center px-16 py-5 font-medium text-center text-white bg-cyan-900 rounded-xl max-md:px-5 max-md:mt-10">
                                 Buy Now
                             </div>
                         </div>
@@ -155,7 +155,7 @@ const PricingModule = () => {
                                 src={BorderLogoCard}
                                 className="self-end max-w-full border border-solid border-zinc-400 stroke-[1px] stroke-zinc-400 w-full max-md:mr-2.5"
                             />
-                            <div className="min-h-[50px]">
+                            <div className="min-h-[270px]">
                                 <div className="self-start mt-[10%] leading-5 text-center text-neutral-900 max-md:ml-2.5">
                                     Personal feature include
                                 </div>
@@ -184,7 +184,7 @@ const PricingModule = () => {
                                     <div>Restore & BackUp Features</div>
                                 </div>
                             </div>
-                            <div className="justify-center items-center px-16 py-5 mt-16 font-medium text-center text-white bg-cyan-900 rounded-xl max-md:px-5 max-md:mt-10">
+                            <div className="justify-center items-center px-16 py-5 font-medium text-center text-white bg-cyan-900 rounded-xl max-md:px-5 max-md:mt-10">
                                 Buy Now
                             </div>
                         </div>
@@ -219,9 +219,7 @@ const PricingModule = () => {
                                 src={BorderLogoCard}
                                 className="self-end max-w-full border border-solid border-zinc-400 stroke-[1px] stroke-zinc-400 w-full max-md:mr-2.5"
                             />
-
-
-                            <div className="min-h-[50px]">
+                            <div className="min-h-[270px]">
                                 <div className="self-start mt-[10%] leading-5 text-center text-neutral-900 max-md:ml-2.5">
                                     Core & Personal feature include
                                 </div>
@@ -250,15 +248,17 @@ const PricingModule = () => {
                                     <div>
                                         100GB Storage at ICP Ecosystem{" "}
                                         <span className="font-bold">IC Drive</span>
+                                        <span>
+                                            <img
+                                                loading="lazy"
+                                                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&"
+                                                className="max-w-full aspect-[2.63] w-[121px] max-md:ml-2.5"
+                                            />
+                                        </span>
                                     </div>
                                 </div>
                             </div>
-                            <img
-                                loading="lazy"
-                                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/338b4f5b4c7ed4342cbc81ebbff51b99c6c6e1895d02864fa2395622691b99ae?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                className="ml-14 max-w-full aspect-[2.63] w-[121px] max-md:ml-2.5"
-                            />
-                            <div className="justify-center items-center px-16 py-5 mt-16 font-medium text-center text-white bg-cyan-900 rounded-xl max-md:px-5 max-md:mt-10">
+                            <div className="justify-center items-center px-16 py-5 font-medium text-center text-white bg-cyan-900 rounded-xl max-md:px-5 max-md:mt-10">
                                 Buy Now
                             </div>
                         </div>
