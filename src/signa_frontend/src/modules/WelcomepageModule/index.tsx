@@ -38,7 +38,7 @@ const HomepageModule = () => {
                             <div className="flex gap-5 justify-between self-stretch my-auto text-[1.5vw] text-center text-white max-md:flex-wrap max-md:max-w-full">
                                 <Link to="/dashboard">
                                     <div className="flex gap-2 whitespace-nowrap">
-                                        <div>Homepage</div>
+                                        <div>Dashboard</div>
                                         <img
                                             loading="lazy"
                                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
