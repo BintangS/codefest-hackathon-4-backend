@@ -10,6 +10,7 @@ const AuthenticationCard: React.FC<AuthenticationCardPropsInterface> = ({
     useAuthContext();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [username, setUsername] = useState<string>('');
+  const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
 
   async function handleSubmit() {
     if (!authClient) return;
@@ -19,6 +20,16 @@ const AuthenticationCard: React.FC<AuthenticationCardPropsInterface> = ({
     createProfile(username).then(() => {
       setIsLoading(false);
     });
+  }
+
+  const validateEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (regex.test(e.target.value)) {
+      setIsEmailValid(true);
+      setUsername(e.target.value);
+    } else {
+      setIsEmailValid(false);
+    }
   }
 
   return profile === undefined ? (
@@ -32,10 +43,11 @@ const AuthenticationCard: React.FC<AuthenticationCardPropsInterface> = ({
       <form onSubmit={ (e) => { e.preventDefault() }}>
         <input
           type="text"
-          name="username"
-          placeholder="Enter your username"
-          onChange={(e) => { setUsername(e.target.value) }}
+          name="email"
+          placeholder="Enter your email"
+          onChange={ validateEmail }
         />
+        {!isEmailValid && <div style={{ color: 'red' }}>Please enter a valid email.</div>}
         <button type="submit" disabled={isLoading} onClick={handleSubmit}>
           {isLoading ? 'Loading...' : 'Submit'}
         </button>
