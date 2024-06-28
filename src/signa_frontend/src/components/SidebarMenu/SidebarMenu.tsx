@@ -8,6 +8,7 @@ import IconSendWhite from '../../assets/sidebar/icon-send white.svg'
 import IconSendBlue from '../../assets/sidebar/icon-send blue.svg'
 import IconSettingWhite from '../../assets/sidebar/icon-setting white.svg'
 import BorderIconBlue from '../../assets/sidebar/border-icon-blue.png'
+import IconLogoutWhite from '../../assets/sidebar/icon-logout white.svg'
 import { Link } from 'react-router-dom'
 import { SidebarmenuInterface } from './interface'
 
@@ -21,8 +22,13 @@ const SidebarMenu: React.FC<SidebarmenuInterface> = ({name}) => {
             />
             <img
                 loading="lazy"
+                src={IconLogoutWhite}
+                className="w-full aspect-square mt-[550px]"
+            />
+            <img
+                loading="lazy"
                 src={IconProfileWhite}
-                className="w-full aspect-square mt-[572px]"
+                className="w-full aspect-square mt-[20px]"
             />
             <img
                 loading="lazy"
