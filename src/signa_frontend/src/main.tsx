@@ -16,6 +16,8 @@ import DashboardfileModule from './modules/DashboardModule/index.tsx';
 import PrivacyModule from './modules/PrivacyModule/index.tsx';
 import ViewfileModule from './modules/ViewfileModule/index.tsx';
 import ProductModule from './modules/ProductModule/index.tsx';
+import PricingModule from './modules/PricingModule/index.tsx';
+import SignupModule from './modules/SignupModule/index.tsx';
 
 // Set the workerSrc to the imported worker
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -64,6 +66,14 @@ const router = createBrowserRouter([
 			{
 				path: '/product',
 				element: <ProductModule />
+			},
+			{
+				path: '/pricing',
+				element: <PricingModule />
+			},
+			{
+				path: '/signup',
+				element: <SignupModule />
 			}
 		],
 	},
