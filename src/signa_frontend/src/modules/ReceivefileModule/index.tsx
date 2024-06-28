@@ -16,7 +16,7 @@ const ReceivefileModule = () => {
                         src={AssetLeftReceivePage}
                         className="object-cover absolute inset-0 size-full"
                     />
-                    <div className="absolute flex gap-[10px]">
+                    <div className="absolute flex">
                         <img
                             loading="lazy"
                             src={SignaLogo_v1}
@@ -27,8 +27,8 @@ const ReceivefileModule = () => {
                             src={SignaSignature}
                             className="w-[50px] h-[50px] shrink-0 w-14"
                         />
-                        <div className="w-full shrink 0 leading-[300%]">|</div>
-                        <div className="w-full shrink 0">Receive PDF</div>
+                        <div className="w-full shrink-0 leading-[300%]">|</div>
+                        <div className="w-full shrink-0">Receive PDF</div>
                     </div>
                 </div>
             </div>

@@ -18,17 +18,47 @@ const SendfileModule = () => {
     // const [email, setEmail] = useState<string>('');
 
     return (
+<<<<<<< HEAD
         <AuthenticationCard>
             <div className="flex [width:inherit] gap-5 justify-normal bg-white max-md:flex-wrap">
                 <div className="flex w-[20%] gap-0">
                     <SidebarMenu name={"send_pdf"} />
                     <div className="flex relative flex-col items-start px-11 pt-6 pb-20 aspect-[0.1] w-[101px]">
+=======
+        <div className="flex [width:inherit] gap-5 justify-normal bg-white max-md:flex-wrap">
+            <div className="flex w-[20%] gap-0">
+                <SidebarMenu name={"send_pdf"} />
+                <div className="flex relative flex-col items-start px-11 pt-6 pb-20 aspect-[0.1] w-[101px]">
+                    <img
+                        loading="lazy"
+                        src={AssetLeftSendPage}
+                        className="object-cover absolute inset-0 size-full"
+                    />
+                    <div className="absolute flex">
+>>>>>>> main
                         <img
                             loading="lazy"
                             src={AssetLeftSendPage}
                             className="object-cover absolute inset-0 size-full"
                         />
+<<<<<<< HEAD
                         <div className="absolute flex gap-[10px]">
+=======
+                        <img
+                            loading="lazy"
+                            src={SignaSignature}
+                            className="w-[50px] h-[50px] shrink-0 w-14"
+                        />
+                        <div className="w-full shrink-0 leading-[300%]">|</div>
+                        <div className="w-full shrink-0">Send PDF</div>
+                    </div>
+                </div>
+            </div>
+            <div className="flex w-[90%] gap-5 justify-center max-md:flex-wrap max-md:max-w-full">
+                <div className="flex [width:inherit] mt-[100px] flex-col px-5 my-auto max-md:max-w-full">
+                    <div className="flex justify-center items-center px-16 py-20 text-lg rounded-xl border border-solid bg-zinc-100 border-zinc-800 text-neutral-400 max-md:px-5 max-md:max-w-full">
+                        <div className="flex flex-col mt-11 mb-5 max-w-full w-[168px] max-md:mt-10">
+>>>>>>> main
                             <img
                                 loading="lazy"
                                 src={SignaLogo_v1}
