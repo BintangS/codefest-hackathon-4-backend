@@ -58,7 +58,7 @@ const PricingModule = () => {
                             <div className="self-center text-[2rem] mt-1.5 text-center text-neutral-900">
                                 Personal
                             </div>
-                            <div className="self-center mt-10 text-[1rem] leading-6 text-center text-neutral-900">
+                            <div className="min-h-[80px] self-center mt-10 text-[1rem] leading-6 text-center text-neutral-900">
                                 For small to medium teams that need to sen, sign, and
                                 collaborate
                             </div>
@@ -130,7 +130,7 @@ const PricingModule = () => {
                             <div className="self-center mt-7 text-[2rem] text-center text-neutral-900">
                                 Standard
                             </div>
-                            <div className="self-center mt-10 mb-[11%] text-[1rem] leading-6 text-center text-neutral-900">
+                            <div className="min-h-[80px] self-center mt-10 text-[1rem] leading-6 text-center text-neutral-900">
                                 For small to medium teams that need to sen, sign, and
                                 collaborate
                             </div>
@@ -194,7 +194,7 @@ const PricingModule = () => {
                             <div className="self-center text-[2rem] mt-1.5 text-center text-neutral-900">
                                 Business Pro
                             </div>
-                            <div className="self-center mt-10 text-[1rem] leading-6 text-center text-neutral-900">
+                            <div className="min-h-[80px] self-center mt-10 text-[1rem] leading-6 text-center text-neutral-900">
                                 For small to medium teams that need to sen, sign, and
                                 collaborate
                             </div>
