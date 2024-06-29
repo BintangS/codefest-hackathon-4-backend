@@ -76,7 +76,7 @@ const HomepageModule = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex overflow-x-scroll hide-scroll-bar [height:inherit] gap-24 justify-around px-5 md:flex-wrap mt-10">
+            <div className="flex overflow-x-scroll scrollbar-container [height:inherit] gap-24 justify-around px-5 md:flex-wrap mt-10">
                 <img
                     loading="lazy"
                     src={PeruriLogo}

@@ -24,9 +24,9 @@ const PricingModule = () => {
                         className="shrink-0 aspect-[1.3] w-[87px]"
                     />
                 </div>
-                <div className="flex gap-5 justify-between self-stretch my-auto text-[1.5vw] text-center text-neutral-900 max-md:flex-wrap max-md:max-w-full">
+                <div className="flex gap-10 justify-between my-auto text-center text-black max-md:flex-wrap max-md:max-w-full">
                     <Link to="/">
-                        <div className="flex gap-2 whitespace-nowrap">
+                        <div className="flex gap-2 whitespace-nowrap opacity-100 z-10 transition-opacity duration-500 hover:opacity-40">
                             <div>Homepage</div>
                             <img
                                 loading="lazy"
@@ -36,7 +36,7 @@ const PricingModule = () => {
                         </div>
                     </Link>
                     <Link to="/product">
-                        <div className="flex gap-2 whitespace-nowrap">
+                        <div className="flex gap-2 whitespace-nowrap opacity-100 z-10 transition-opacity duration-500 hover:opacity-40">
                             <div>Product</div>
                             <img
                                 loading="lazy"
@@ -46,7 +46,7 @@ const PricingModule = () => {
                         </div>
                     </Link>
                     <Link to="/pricing">
-                        <div className="flex gap-2 font-semibold">
+                        <div className="flex gap-2 whitespace-nowrap opacity-100 z-10 transition-opacity duration-500 hover:opacity-40">
                             <div>Plan & Pricing</div>
                             <img
                                 loading="lazy"
@@ -56,9 +56,9 @@ const PricingModule = () => {
                         </div>
                     </Link>
                 </div>
-                <div className="justify-center self-stretch p-2.5 my-auto text-[1.5vw] text-center text-white whitespace-nowrap bg-cyan-600 rounded-xl">
-                    Contact
-                </div>
+                <button className="bg-transparent hover:bg-blue-500 text-black font-semibold transition-colors duration-500 t-white py-2 px-4 border border-blue-300 hover:border-transparent rounded">
+                    Contact us!
+                </button>
             </div>
             <div className="text-[3rem] mt-[5%] pb-[30%] mb-[20%] justify-center items-center self-stretch w-full text-center text-neutral-900 max-md:px-5 max-md:pb-10 max-md:max-w-full max-md:text-4xl">
                 Choose Your Plan
