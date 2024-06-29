@@ -21,6 +21,7 @@ const ViewfileModule = () => {
     const [isDocumentSigned, setIsDocumentSigned] = useState<boolean>(false);
     const [isProcessing, setIsProcessing] = useState<boolean>(false);
     const [isDocumentSignedAndSubmitted, setIsDocumentSignedAndSubmitted] = useState<boolean>(false);
+    const [documentSignee, setDocumentSignee] = useState<string>('');
     const { profile } = useAuthContext();
     const navigate = useNavigate();
     const location = useLocation();
@@ -40,7 +41,7 @@ const ViewfileModule = () => {
         if (profile?.id && documentBytes !== null) {
             await signa_backend.signDocument(profile?.id, documentBytesForView as Uint8Array, location.state?.documentId);
 
-            alert("Document sent");
+            alert("Document signed and submitted successfully!");
             setIsProcessing(false);
             navigate('/dashboard');
         }
@@ -100,11 +101,11 @@ const ViewfileModule = () => {
                     Processing...
                 </button>
             )
-        } else if (!isDocumentSigned) {
+        } else if (!isDocumentSigned && documentSignee === profile?.id.toString()) {
             return (<button className="justify-center items-center px-16 py-6 mt-5 whitespace-nowrap bg-sky-300 rounded-md text-white max-md:px-5 max-md:max-w-full transition-color duration-500 hover:bg-sky-500" onClick={handleSignDocument}>
                 Sign Document
             </button>);
-        } else if (isDocumentSigned) {
+        } else if (isDocumentSigned && documentSignee === profile?.id.toString()) {
             return (<button className="justify-center items-center px-16 py-6 mt-5 whitespace-nowrap bg-sky-300 rounded-md text-white max-md:px-5 max-md:max-w-full transition-color duration-500 hover:bg-sky-500" onClick={handleSubmitSignedDocument}>
                 Submit Signed Document
             </button>)
@@ -118,12 +119,13 @@ const ViewfileModule = () => {
                 return;
             }
 
-            const doc = await signa_backend.getDocumentByIdAndSigneeId(location.state?.documentId, profile.id);
+            const doc = await signa_backend.getDocumentByIdAsOwnerOrSignee(location.state?.documentId, profile.id);
 
             if (doc && 'ok' in doc) {
                 const documentBytesCopy = new Uint8Array(doc.ok.document).slice().buffer;
                 setDocumentBytesForView(doc.ok.document as Uint8Array);
                 setDocumentBytes(documentBytesCopy);
+                setDocumentSignee(doc.ok.signedBy.toString());
                 if (doc.ok.createdAt !== doc.ok.signedAt) {
                     setIsDocumentSignedAndSubmitted(true);
                 }

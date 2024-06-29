@@ -47,16 +47,16 @@ const SendfileModule = () => {
         setIsProcessing(true);
         if (profile?.id && internetIdentityAddress !== '') {
             await signa_backend.createDocument(profile?.id, file || [], Principal.fromText(internetIdentityAddress));
-            alert("Document sent!");
+            alert('Document sent!');
             setIsProcessing(false);
             navigate('/dashboard');
         } else if (profile?.id && email !== '') {
             await signa_backend.createDocumentUsingEmail(profile?.id, file || [], email);
-            alert("Document sent!");
+            alert('Document sent!');
             setIsProcessing(false);
             navigate('/dashboard');
         } else {
-            alert("You are not authenticated, please login!");
+            alert('You are not authenticated, please login!');
         }
     }
 

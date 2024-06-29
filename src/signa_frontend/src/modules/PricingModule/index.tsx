@@ -81,13 +81,13 @@ const PricingModule = () => {
                                         src={ICPMonoLogo}
                                         className="max-w-[fit-content] w-2/5 h-2/5 mt-[20%]"
                                     />
-                                    <div className="flex-auto my-auto max-md:text-4xl">0.3</div>
-                                </div>
-                                <div className="flex text-left w-[40%] flex-col my-auto text-[0.75rem] leading-5">
+                                    <div className="my-auto max-md:text-4xl">0.3</div>
+                                    <div className="flex text-left w-[40%] flex-col my-auto text-[0.75rem] leading-5">
                                     <div className="text-neutral-900">/ month</div>
                                     <div className="text-zinc-400">
                                         3 ICP Coins billed annually
                                     </div>
+                                </div>
                                 </div>
                             </div>
                             <img
@@ -153,13 +153,13 @@ const PricingModule = () => {
                                         src={ICPMonoLogo}
                                         className="max-w-[fit-content] w-2/5 h-2/5 mt-[20%]"
                                     />
-                                    <div className="flex-auto my-auto max-md:text-4xl">0.5</div>
-                                </div>
-                                <div className="flex text-left w-[40%] flex-col my-auto text-[0.75rem] leading-5">
+                                    <div className="my-auto max-md:text-4xl">0.5</div>
+                                    <div className="flex text-left w-[40%] flex-col my-auto text-[0.75rem] leading-5">
                                     <div className="text-neutral-900">/ month</div>
                                     <div className="text-zinc-400">
                                         5 ICP Coins billed annually
                                     </div>
+                                </div>
                                 </div>
                             </div>
                             <img
@@ -217,13 +217,13 @@ const PricingModule = () => {
                                         src={ICPMonoLogo}
                                         className="max-w-[fit-content] w-2/5 h-2/5 mt-[20%]"
                                     />
-                                    <div className="flex-auto my-auto max-md:text-4xl">0.7</div>
-                                </div>
-                                <div className="flex text-left w-[40%] flex-col my-auto text-[0.75rem] leading-5">
+                                    <div className="my-auto max-md:text-4xl">0.7</div>
+                                    <div className="flex text-left w-[40%] flex-col my-auto text-[0.75rem] leading-5">
                                     <div className="text-neutral-900">/ month</div>
                                     <div className="text-zinc-400">
                                         7 ICP Coins billed annually
                                     </div>
+                                </div>
                                 </div>
                             </div>
                             <img
@@ -260,13 +260,6 @@ const PricingModule = () => {
                                     <div>
                                         100GB Storage at ICP Ecosystem{" "}
                                         <span className="font-bold">IC Drive</span>
-                                        <span>
-                                            <img
-                                                loading="lazy"
-                                                src={ICDriveLogo}
-                                                className="max-w-full aspect-[2.63] w-[121px] max-md:ml-2.5"
-                                            />
-                                        </span>
                                     </div>
                                 </div>
                             </div>

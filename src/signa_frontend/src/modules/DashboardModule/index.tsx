@@ -13,8 +13,8 @@ import SidebarMenu from '../../components/SidebarMenu/SidebarMenu'
 
 import AuthenticationCard from '../../components/AuthenticationCard/AuthenticationCard'
 
-import { signa_backend } from '../../../../declarations/signa_backend';
-import { useAuthContext } from '../../components/contexts/UseAuthContext';
+import { signa_backend } from '../../../../declarations/signa_backend'
+import { useAuthContext } from '../../components/contexts/UseAuthContext'
 import { DocumentInterface } from '../../interfaces/document'
 
 const DashboardfileModule = () => {
@@ -30,7 +30,7 @@ const DashboardfileModule = () => {
     const handleSearchDocument = async () => {
         try {
             if (profile?.id) {
-                const doc = await signa_backend.getDocumentByIdAndSigneeId(documentId, profile.id);
+                const doc = await signa_backend.getDocumentByIdAsOwnerOrSignee(documentId, profile.id);
                 if (doc && 'ok' in doc) {
                     setDocuments([doc.ok]);
                 }
