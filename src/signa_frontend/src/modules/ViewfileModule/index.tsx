@@ -40,7 +40,7 @@ const ViewfileModule = () => {
         if (profile?.id && documentBytes !== null) {
             await signa_backend.signDocument(profile?.id, documentBytesForView as Uint8Array, location.state?.documentId);
 
-            alert("Document send!");
+            alert("Document sent");
             setIsProcessing(false);
             navigate('/dashboard');
         }

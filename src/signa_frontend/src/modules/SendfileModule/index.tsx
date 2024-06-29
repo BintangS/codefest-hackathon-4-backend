@@ -3,7 +3,7 @@ import { signa_backend } from '../../../../declarations/signa_backend';
 import { useNavigate } from 'react-router-dom';
 
 import { useAuthContext } from '../../components/contexts/UseAuthContext';
-import { Principal } from "@dfinity/principal";
+import { Principal } from '@dfinity/principal';
 
 // assets
 import AssetLeftSendPage from '../../assets/AssetLeft-SendPage.webp';
@@ -47,12 +47,12 @@ const SendfileModule = () => {
         setIsProcessing(true);
         if (profile?.id && internetIdentityAddress !== '') {
             await signa_backend.createDocument(profile?.id, file || [], Principal.fromText(internetIdentityAddress));
-            alert("Document send!");
+            alert("Document sent!");
             setIsProcessing(false);
             navigate('/dashboard');
         } else if (profile?.id && email !== '') {
             await signa_backend.createDocumentUsingEmail(profile?.id, file || [], email);
-            alert("Document send!");
+            alert("Document sent!");
             setIsProcessing(false);
             navigate('/dashboard');
         } else {
