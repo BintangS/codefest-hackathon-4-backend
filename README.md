@@ -1,6 +1,8 @@
 # Signa
 Welcome to Signa, your trusted, decentralized, and easy to use document signing on the Blockchain. This project utilizes Internet Computer (ICP) as the main platform.
 
+<img src="./src/signa_frontend/public/SignaProductPage.jpeg" style="margin-top:10px;margin-bottom:10px" alt="Signa Product Page" width="400"></a>
+
 ## Get Started
 
 Before starting exploring this project, please try to understand how Internet Computer (ICP) works by reading this documents
