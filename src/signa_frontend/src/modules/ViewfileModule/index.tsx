@@ -91,7 +91,7 @@ const ViewfileModule = () => {
             return;
         } else if (isProcessing) {
             return (
-                <button type="button" className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-sky-300 hover:bg-sky-500 transition ease-in-out duration-150 cursor-not-allowed" disabled>
+                <button type="button" className="inline-flex items-center px-16 py-6 mt-5 font-semibold leading-6 text-sm shadow rounded-md text-white bg-sky-300 hover:bg-sky-500 transition ease-in-out duration-150 cursor-not-allowed" disabled>
                     <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx={12} cy={12} r={10} stroke="currentColor" strokeWidth={4}/>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -119,11 +119,11 @@ const ViewfileModule = () => {
 
             const doc = await signa_backend.getDocumentByIdAndSigneeId(location.state?.documentId, profile.id);
 
-            if (doc && 'Ok' in doc) {
-                const documentBytesCopy = new Uint8Array(doc.Ok.document).slice().buffer;
-                setDocumentBytesForView(doc.Ok.document as Uint8Array);
+            if (doc && 'ok' in doc) {
+                const documentBytesCopy = new Uint8Array(doc.ok.document).slice().buffer;
+                setDocumentBytesForView(doc.ok.document as Uint8Array);
                 setDocumentBytes(documentBytesCopy);
-                if (doc.Ok.createdAt !== doc.Ok.signedAt) {
+                if (doc.ok.createdAt !== doc.ok.signedAt) {
                     setIsDocumentSignedAndSubmitted(true);
                 }
             }
@@ -173,7 +173,7 @@ const ViewfileModule = () => {
                                 Document id: { location.state?.documentId }
                             </div>
                         </div>
-                        <div className="flex relative flex-col items-center px-7 pt-20 pb-6 mt-14 text-lg font-semibold rounded-xl border border-solid bg-zinc-100 border-zinc-800 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                        <div className="flex relative flex-col items-center px-7 pt-20 pb-6 mt-14 text-lg font-semibold rounded-xl bg-zinc-100 border-zinc-800 max-md:px-5 max-md:mt-10 max-md:max-w-full">
                             { documentBytesForView && <PreviewPDF pdfBytes = { new Uint8Array(documentBytesForView) } /> }
                             { showSignButton() }
                         </div>

@@ -2,150 +2,44 @@ import type { Principal } from '@dfinity/principal';
 import type { ActorMethod } from '@dfinity/agent';
 import type { IDL } from '@dfinity/candid';
 
+export interface Document {
+  'id' : string,
+  'ownerId' : Principal,
+  'createdAt' : Time,
+  'signedAt' : Time,
+  'signedBy' : Principal,
+  'document' : Uint8Array | number[],
+}
+export type Result = { 'ok' : User } |
+  { 'err' : string };
+export type Result_1 = { 'ok' : Document } |
+  { 'err' : string };
+export type Result_2 = { 'ok' : boolean } |
+  { 'err' : string };
+export type Time = bigint;
+export interface User {
+  'id' : Principal,
+  'userName' : string,
+  'createdAt' : Time,
+}
 export interface _SERVICE {
   'createDocument' : ActorMethod<
     [Principal, Uint8Array | number[], Principal],
-    {
-        'Ok' : {
-          'id' : string,
-          'ownerId' : Principal,
-          'createdAt' : bigint,
-          'signedAt' : bigint,
-          'signedBy' : Principal,
-          'document' : Uint8Array | number[],
-        }
-      } |
-      {
-        'Err' : { 'Fail' : string } |
-          { 'NotFound' : string } |
-          { 'Succes' : string }
-      }
+    Document
   >,
   'createDocumentUsingEmail' : ActorMethod<
     [Principal, Uint8Array | number[], string],
-    {
-        'Ok' : {
-          'id' : string,
-          'ownerId' : Principal,
-          'createdAt' : bigint,
-          'signedAt' : bigint,
-          'signedBy' : Principal,
-          'document' : Uint8Array | number[],
-        }
-      } |
-      {
-        'Err' : { 'Fail' : string } |
-          { 'NotFound' : string } |
-          { 'Succes' : string }
-      }
+    Result_1
   >,
-  'createUser' : ActorMethod<
-    [{ 'id' : Principal, 'name' : string }],
-    { 'Fail' : string } |
-      { 'NotFound' : string } |
-      { 'Succes' : string }
-  >,
-  'deleteUser' : ActorMethod<
-    [Principal],
-    { 'Fail' : string } |
-      { 'NotFound' : string } |
-      { 'Succes' : string }
-  >,
-  'getAllDocument' : ActorMethod<
-    [],
-    Array<
-      {
-        'id' : string,
-        'ownerId' : Principal,
-        'createdAt' : bigint,
-        'signedAt' : bigint,
-        'signedBy' : Principal,
-        'document' : Uint8Array | number[],
-      }
-    >
-  >,
-  'getAllDocumentByUser' : ActorMethod<
-    [Principal],
-    Array<
-      {
-        'id' : string,
-        'ownerId' : Principal,
-        'createdAt' : bigint,
-        'signedAt' : bigint,
-        'signedBy' : Principal,
-        'document' : Uint8Array | number[],
-      }
-    >
-  >,
-  'getAllUser' : ActorMethod<
-    [],
-    Array<{ 'id' : Principal, 'userName' : string, 'createdAt' : bigint }>
-  >,
-  'getDocumentByIdAndSigneeId' : ActorMethod<
-    [string, Principal],
-    {
-        'Ok' : {
-          'id' : string,
-          'ownerId' : Principal,
-          'createdAt' : bigint,
-          'signedAt' : bigint,
-          'signedBy' : Principal,
-          'document' : Uint8Array | number[],
-        }
-      } |
-      {
-        'Err' : { 'Fail' : string } |
-          { 'NotFound' : string } |
-          { 'Succes' : string }
-      }
-  >,
-  'getDocumentByOwner' : ActorMethod<
-    [Principal],
-    Array<
-      {
-        'id' : string,
-        'ownerId' : Principal,
-        'createdAt' : bigint,
-        'signedAt' : bigint,
-        'signedBy' : Principal,
-        'document' : Uint8Array | number[],
-      }
-    >
-  >,
-  'getDocumentBySignee' : ActorMethod<
-    [Principal],
-    Array<
-      {
-        'id' : string,
-        'ownerId' : Principal,
-        'createdAt' : bigint,
-        'signedAt' : bigint,
-        'signedBy' : Principal,
-        'document' : Uint8Array | number[],
-      }
-    >
-  >,
-  'getUserById' : ActorMethod<
-    [Principal],
-    { 'Ok' : { 'id' : Principal, 'userName' : string, 'createdAt' : bigint } } |
-      {
-        'Err' : { 'Fail' : string } |
-          { 'NotFound' : string } |
-          { 'Succes' : string }
-      }
-  >,
+  'createUser' : ActorMethod<[Principal, string], Result>,
+  'deleteUser' : ActorMethod<[Principal], Result_2>,
+  'getAllDocumentByUser' : ActorMethod<[Principal], Array<Document>>,
+  'getDocumentByIdAndSigneeId' : ActorMethod<[string, Principal], Result_1>,
+  'getUserById' : ActorMethod<[Principal], Result>,
   'greet' : ActorMethod<[string], string>,
   'signDocument' : ActorMethod<
     [Principal, Uint8Array | number[], string],
-    { 'Fail' : string } |
-      { 'NotFound' : string } |
-      { 'Succes' : string }
-  >,
-  'updateUser' : ActorMethod<
-    [{ 'id' : Principal, 'userName' : string, 'createdAt' : bigint }],
-    { 'Fail' : string } |
-      { 'NotFound' : string } |
-      { 'Succes' : string }
+    string
   >,
 }
 export declare const idlFactory: IDL.InterfaceFactory;
