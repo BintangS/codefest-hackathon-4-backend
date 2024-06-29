@@ -1,212 +1,49 @@
 export const idlFactory = ({ IDL }) => {
+  const Time = IDL.Int;
+  const Document = IDL.Record({
+    'id' : IDL.Text,
+    'ownerId' : IDL.Principal,
+    'createdAt' : Time,
+    'signedAt' : Time,
+    'signedBy' : IDL.Principal,
+    'document' : IDL.Vec(IDL.Nat8),
+  });
+  const Result_1 = IDL.Variant({ 'ok' : Document, 'err' : IDL.Text });
+  const User = IDL.Record({
+    'id' : IDL.Principal,
+    'userName' : IDL.Text,
+    'createdAt' : Time,
+  });
+  const Result = IDL.Variant({ 'ok' : User, 'err' : IDL.Text });
+  const Result_2 = IDL.Variant({ 'ok' : IDL.Bool, 'err' : IDL.Text });
   return IDL.Service({
     'createDocument' : IDL.Func(
         [IDL.Principal, IDL.Vec(IDL.Nat8), IDL.Principal],
-        [
-          IDL.Variant({
-            'Ok' : IDL.Record({
-              'id' : IDL.Text,
-              'ownerId' : IDL.Principal,
-              'createdAt' : IDL.Nat64,
-              'signedAt' : IDL.Nat64,
-              'signedBy' : IDL.Principal,
-              'document' : IDL.Vec(IDL.Nat8),
-            }),
-            'Err' : IDL.Variant({
-              'Fail' : IDL.Text,
-              'NotFound' : IDL.Text,
-              'Succes' : IDL.Text,
-            }),
-          }),
-        ],
+        [Document],
         [],
       ),
     'createDocumentUsingEmail' : IDL.Func(
         [IDL.Principal, IDL.Vec(IDL.Nat8), IDL.Text],
-        [
-          IDL.Variant({
-            'Ok' : IDL.Record({
-              'id' : IDL.Text,
-              'ownerId' : IDL.Principal,
-              'createdAt' : IDL.Nat64,
-              'signedAt' : IDL.Nat64,
-              'signedBy' : IDL.Principal,
-              'document' : IDL.Vec(IDL.Nat8),
-            }),
-            'Err' : IDL.Variant({
-              'Fail' : IDL.Text,
-              'NotFound' : IDL.Text,
-              'Succes' : IDL.Text,
-            }),
-          }),
-        ],
+        [Result_1],
         [],
       ),
-    'createUser' : IDL.Func(
-        [IDL.Record({ 'id' : IDL.Principal, 'name' : IDL.Text })],
-        [
-          IDL.Variant({
-            'Fail' : IDL.Text,
-            'NotFound' : IDL.Text,
-            'Succes' : IDL.Text,
-          }),
-        ],
-        [],
-      ),
-    'deleteUser' : IDL.Func(
-        [IDL.Principal],
-        [
-          IDL.Variant({
-            'Fail' : IDL.Text,
-            'NotFound' : IDL.Text,
-            'Succes' : IDL.Text,
-          }),
-        ],
-        [],
-      ),
-    'getAllDocument' : IDL.Func(
-        [],
-        [
-          IDL.Vec(
-            IDL.Record({
-              'id' : IDL.Text,
-              'ownerId' : IDL.Principal,
-              'createdAt' : IDL.Nat64,
-              'signedAt' : IDL.Nat64,
-              'signedBy' : IDL.Principal,
-              'document' : IDL.Vec(IDL.Nat8),
-            })
-          ),
-        ],
-        ['query'],
-      ),
+    'createUser' : IDL.Func([IDL.Principal, IDL.Text], [Result], []),
+    'deleteUser' : IDL.Func([IDL.Principal], [Result_2], ['query']),
     'getAllDocumentByUser' : IDL.Func(
         [IDL.Principal],
-        [
-          IDL.Vec(
-            IDL.Record({
-              'id' : IDL.Text,
-              'ownerId' : IDL.Principal,
-              'createdAt' : IDL.Nat64,
-              'signedAt' : IDL.Nat64,
-              'signedBy' : IDL.Principal,
-              'document' : IDL.Vec(IDL.Nat8),
-            })
-          ),
-        ],
-        ['query'],
-      ),
-    'getAllUser' : IDL.Func(
-        [],
-        [
-          IDL.Vec(
-            IDL.Record({
-              'id' : IDL.Principal,
-              'userName' : IDL.Text,
-              'createdAt' : IDL.Nat64,
-            })
-          ),
-        ],
+        [IDL.Vec(Document)],
         ['query'],
       ),
     'getDocumentByIdAndSigneeId' : IDL.Func(
         [IDL.Text, IDL.Principal],
-        [
-          IDL.Variant({
-            'Ok' : IDL.Record({
-              'id' : IDL.Text,
-              'ownerId' : IDL.Principal,
-              'createdAt' : IDL.Nat64,
-              'signedAt' : IDL.Nat64,
-              'signedBy' : IDL.Principal,
-              'document' : IDL.Vec(IDL.Nat8),
-            }),
-            'Err' : IDL.Variant({
-              'Fail' : IDL.Text,
-              'NotFound' : IDL.Text,
-              'Succes' : IDL.Text,
-            }),
-          }),
-        ],
+        [Result_1],
         ['query'],
       ),
-    'getDocumentByOwner' : IDL.Func(
-        [IDL.Principal],
-        [
-          IDL.Vec(
-            IDL.Record({
-              'id' : IDL.Text,
-              'ownerId' : IDL.Principal,
-              'createdAt' : IDL.Nat64,
-              'signedAt' : IDL.Nat64,
-              'signedBy' : IDL.Principal,
-              'document' : IDL.Vec(IDL.Nat8),
-            })
-          ),
-        ],
-        ['query'],
-      ),
-    'getDocumentBySignee' : IDL.Func(
-        [IDL.Principal],
-        [
-          IDL.Vec(
-            IDL.Record({
-              'id' : IDL.Text,
-              'ownerId' : IDL.Principal,
-              'createdAt' : IDL.Nat64,
-              'signedAt' : IDL.Nat64,
-              'signedBy' : IDL.Principal,
-              'document' : IDL.Vec(IDL.Nat8),
-            })
-          ),
-        ],
-        ['query'],
-      ),
-    'getUserById' : IDL.Func(
-        [IDL.Principal],
-        [
-          IDL.Variant({
-            'Ok' : IDL.Record({
-              'id' : IDL.Principal,
-              'userName' : IDL.Text,
-              'createdAt' : IDL.Nat64,
-            }),
-            'Err' : IDL.Variant({
-              'Fail' : IDL.Text,
-              'NotFound' : IDL.Text,
-              'Succes' : IDL.Text,
-            }),
-          }),
-        ],
-        ['query'],
-      ),
+    'getUserById' : IDL.Func([IDL.Principal], [Result], ['query']),
     'greet' : IDL.Func([IDL.Text], [IDL.Text], ['query']),
     'signDocument' : IDL.Func(
         [IDL.Principal, IDL.Vec(IDL.Nat8), IDL.Text],
-        [
-          IDL.Variant({
-            'Fail' : IDL.Text,
-            'NotFound' : IDL.Text,
-            'Succes' : IDL.Text,
-          }),
-        ],
-        [],
-      ),
-    'updateUser' : IDL.Func(
-        [
-          IDL.Record({
-            'id' : IDL.Principal,
-            'userName' : IDL.Text,
-            'createdAt' : IDL.Nat64,
-          }),
-        ],
-        [
-          IDL.Variant({
-            'Fail' : IDL.Text,
-            'NotFound' : IDL.Text,
-            'Succes' : IDL.Text,
-          }),
-        ],
+        [IDL.Text],
         [],
       ),
   });

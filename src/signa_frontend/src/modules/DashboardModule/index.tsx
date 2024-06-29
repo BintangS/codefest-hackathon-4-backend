@@ -31,12 +31,13 @@ const DashboardfileModule = () => {
         try {
             if (profile?.id) {
                 const doc = await signa_backend.getDocumentByIdAndSigneeId(documentId, profile.id);
-                if (doc && 'Ok' in doc) {
-                    setDocuments([doc.Ok]);
+                if (doc && 'ok' in doc) {
+                    setDocuments([doc.ok]);
                 }
             }
         } catch (error) {
-            console.error("Failed to fetch documents: ", error);
+            // TODO: implement logging for error
+            // console.error("Failed to fetch documents: ", error);
         }
     };
 
@@ -46,9 +47,9 @@ const DashboardfileModule = () => {
                 try {
                     const docs = await signa_backend.getAllDocumentByUser(profile.id)
                     setDocuments(docs);
-                    console.log(docs[0].createdAt, docs[0].signedAt);
                 } catch (error) {
-                    console.error("Failed to fetch documents:", error);
+                    // TODO: implement logging for error
+                    // console.error("Failed to fetch documents:", error);
                 }
             } 
         };
