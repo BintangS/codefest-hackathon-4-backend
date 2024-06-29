@@ -1,3 +1,7 @@
+<div style="display:flex;justify-content:center;">
+    <img src="./src/signa_frontend/public/SignaLogo.svg" style="margin-top:10px;margin-bottom:10px" alt="Signa Logo" width="300"></a>
+</div>
+
 # Signa - The 1st Web3.0 eSign Platform in ICP Ecosystem
 Welcome to Signa, your trusted, decentralized, and easy to use document signing on the Blockchain. This project utilizes Internet Computer (ICP) as the main platform.
 
