@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { degrees, PDFDocument, PDFImage, rgb, StandardFonts } from 'pdf-lib';
+import { PDFDocument } from 'pdf-lib';
+// import { degrees, PDFDocument, PDFImage, rgb, StandardFonts } from 'pdf-lib';
 import QrCode from 'react-qrcode-svg'
 
 import AssetLeftReceivePage from '../../assets/AssetLeft-ReceivePage.webp'
@@ -74,7 +75,7 @@ const ViewfileModule = () => {
         // Load a PDFDocument from the existing PDF bytes
         const pdfDoc = await PDFDocument.load(existingPdfBytes as ArrayBuffer);
         // Embed the Helvetica font
-        const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
+        // const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
 
         // Get the first page of the document
         const pages = pdfDoc.getPages();
