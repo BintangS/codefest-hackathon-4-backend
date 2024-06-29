@@ -5,11 +5,31 @@
 </h1>
 
 # Signa - The 1st Web3.0 eSign Platform in ICP Ecosystem
-Welcome to Signa, your trusted, decentralized, and easy to use document signing on the Blockchain. This project utilizes Internet Computer (ICP) as the main platform.
+**Welcome to Signa, your trusted, decentralized, and easy to use document signing on the Blockchain. This project utilizes Internet Computer (ICP) as the main platform.**
+
+
+•	**The 1st eSign Platform in ICP Ecosytem**: eSigna is utilizing the Internet Computer Protocol (ICP) platform and aims to enrich the ICP ecosystem by providing users with a more diverse selection of applications, ultimately achieving a highly affordable platform for all
+
+•	**Real Time Secured Web3.0 Enabled eSign**: By leveraging ICP architecture, Signa utilized a low-latency decentralized layer to develop a Web 2.0-friendly digital signing platform. This approach employs cloudless technology, resulting in a more cost-effective solution.
+
+•	**Multiple Usage Internet Identity**: By incorporating ICP Internet Identities for platform usage, the interaction between the document sender (Identity 1) and the receiver (Identity 2) facilitates increased adoption of Internet Identities, promoting greater user engagement and integration within the system.
+
+•	**Scannable QR Codes For URL Fetch**: To combat forgery, eSigna utilizes a unique code generated for each signature, which can be tracked through the document ID, ensuring enhanced security and traceability throughout the document verification process.
 
 <h1 align="center">
-    <img src="./src/signa_frontend/public/SignaProductPage.jpeg" style="margin-top:10px;margin-bottom:10px" alt="Signa Product Page" width="300"></a>
+    <img src="./src/signa_frontend/public/SignaProductPage.jpeg" style="margin-top:10px;margin-bottom:10px" alt="Signa Product Page" width="750"></a>
 </h1>
+
+## Signa Main Features
+•	**Seamless User Profile:** By utilizing ICP Internet Identity, the sign-up process is simplified, eliminating the need for a password. 
+
+•	**Send document:** Send and receive documents via email by uploading or dragging and dropping them, all while seamlessly integrating with ICP Internet Identity. Goodbye to Manual Print.
+
+•	**Receive document:** Seamlessly receive documents from other ICP Internet Identity users or via email and proceed to e-sign with just one lightning-fast click.
+
+•	**Unique eSign QR Code:** eSign generates a secure, unique QR code for every signature, making it extremely difficult to commit fraud. Reduce every risks in a possible ways.
+
+•	**Dashboard:** Effortlessly track the progress of your documents and access detailed information on a comprehensive dashboard, ensuring you never lose track of important paperwork again.
 
 ## Get Started
 
