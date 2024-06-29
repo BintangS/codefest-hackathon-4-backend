@@ -56,7 +56,7 @@ const SignupModule = () => {
                         <input type="text" className="self-center max-w-full bg-transparent w-1/2 h-12 p-4" placeholder="Input your email here...">
                         </input>
                         <button className="justify-center items-center px-16 py-6 mt-5 whitespace-nowrap bg-sky-300 rounded-md text-white max-md:px-5 max-md:max-w-full transition-color duration-500 hover:bg-sky-500">
-                            Submit your mail!
+                            Submit!
                         </button>
                     </div>
                 </div>

@@ -91,18 +91,20 @@ const ViewfileModule = () => {
             return;
         } else if (isProcessing) {
             return (
-                <button type="button" className="bg-indigo-500 ..." disabled>
-                    <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+                <button type="button" className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-sky-300 hover:bg-sky-500 transition ease-in-out duration-150 cursor-not-allowed" disabled>
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx={12} cy={12} r={10} stroke="currentColor" strokeWidth={4}/>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
                     Processing...
                 </button>
             )
         } else if (!isDocumentSigned) {
-            return (<button className="justify-center items-center self-stretch px-16 py-6 mt-5 text-center bg-sky-200 rounded-md border border-solid border-zinc-800 text-stone-600 max-md:px-5 max-md:max-w-full" onClick = { handleSignDocument }>
+            return (<button className="justify-center items-center px-16 py-6 mt-5 whitespace-nowrap bg-sky-300 rounded-md text-white max-md:px-5 max-md:max-w-full transition-color duration-500 hover:bg-sky-500" onClick = { handleSignDocument }>
                 Sign Document
             </button>);
         } else if (isDocumentSigned) {
-            return (<button className="justify-center items-center self-stretch px-16 py-6 mt-5 text-center bg-sky-200 rounded-md border border-solid border-zinc-800 text-stone-600 max-md:px-5 max-md:max-w-full" onClick = { handleSubmitSignedDocument }>
+            return (<button className="justify-center items-center px-16 py-6 mt-5 whitespace-nowrap bg-sky-300 rounded-md text-white max-md:px-5 max-md:max-w-full transition-color duration-500 hover:bg-sky-500" onClick = { handleSubmitSignedDocument }>
                 Submit Signed Document
             </button>)
         }
@@ -167,7 +169,7 @@ const ViewfileModule = () => {
                                     className="w-[80%] -mb-[22%] xl:-mb-[10%]"
                                 />
                             </div>
-                            <div className="flex self-end w-[50%] text-[1.5rem] font-medium leading-10 text-center text-black max-md:mr-2.5">
+                            <div className="flex self-end w-[50%] font-medium leading-10 text-center text-black max-md:mr-2.5">
                                 Document id: { location.state?.documentId }
                             </div>
                         </div>

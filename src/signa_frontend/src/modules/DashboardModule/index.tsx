@@ -92,14 +92,6 @@ const DashboardfileModule = () => {
                                         <div className="shrink-0 bg-sky-400 rounded-full h-[18px] w-[18px]" />
                                         <div className="my-auto ml-[20px] text-left">All Document</div>
                                     </div>
-                                    <div className="flex gap-2 mt-6">
-                                        <div className="shrink-0 bg-white rounded-full h-[18px] w-[18px]" />
-                                        <div className="my-auto ml-[20px] text-left">On Hold</div>
-                                    </div>
-                                    <div className="flex gap-2 mt-6 whitespace-nowrap">
-                                        <div className="shrink-0 bg-white rounded-full h-[18px] w-[18px]" />
-                                        <div className="my-auto ml-[20px] text-left">Done</div>
-                                    </div>
                                 </div>
                             </div>
                             <div className="flex flex-col ml-5 w-[95%] max-md:ml-0 max-md:w-full">
@@ -108,10 +100,6 @@ const DashboardfileModule = () => {
                                         <div className="flex-auto text-lg font-medium">
                                             All Document
                                         </div>
-                                        <div className="flex gap-5 justify-between self-start text-base whitespace-nowrap">
-                                            <div>Filter</div>
-                                            <div>List</div>
-                                        </div>
                                     </div>
                                     <div className="flex gap-5 px-5 py-3.5 mt-14 text-base rounded-xl border border-white border-solid max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
                                         <div className="flex-auto my-auto text-white">
@@ -119,7 +107,7 @@ const DashboardfileModule = () => {
                                         </div>
                                         <div>
                                             <input type="text" placeholder="Input here..." className="grow justify-center items-center px-16 py-3.5 rounded-md bg-teal-950 text-slate-500 w-fit max-md:px-5 max-md:max-w-full" onChange={ handleDocumentId }></input>
-                                            <button className="rounded-sm bg-white p-2" onClick={ handleSearchDocument }>Search</button>
+                                            <button className="rounded-sm bg-white p-2 mx-4" onClick={ handleSearchDocument }>Search</button>
                                         </div>
                                     </div>
                                     <div className="flex gap-5 px-5 py-3.5 mt-14 text-base text-white max-md:flex-wrap max-md:pr-5 max-md:mt-10 max-md:max-w-full">
