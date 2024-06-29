@@ -1,13 +1,15 @@
 <h1 align="center">
     <a href="#">
-        <img src="./src/signa_frontend/public/SignaLogo.svg" style="margin-top:10px;margin-bottom:10px;width:150px;" alt="Signa Logo" width="300">
+        <img src="./src/signa_frontend/public/SignaLogo.svg" style="margin-top:10px;margin-bottom:10px;width:150px;" alt="Signa Logo" width="400">
     </a>
 </h1>
 
 # Signa - The 1st Web3.0 eSign Platform in ICP Ecosystem
 Welcome to Signa, your trusted, decentralized, and easy to use document signing on the Blockchain. This project utilizes Internet Computer (ICP) as the main platform.
 
-<img src="./src/signa_frontend/public/SignaProductPage.jpeg" style="margin-top:10px;margin-bottom:10px" alt="Signa Product Page" width="300"></a>
+<h1 align="center">
+    <img src="./src/signa_frontend/public/SignaProductPage.jpeg" style="margin-top:10px;margin-bottom:10px" alt="Signa Product Page" width="300"></a>
+</h1>
 
 ## Get Started
 
