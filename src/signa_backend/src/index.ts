@@ -107,15 +107,37 @@ export default Canister({
     }),
 
     // create document uploaded by users
-    createDocument: update([Principal, blob, Principal], Result(Document, Message), (ownerId, document, signeeId) => {
-        // TODO: implement validations and throw error if needed
-        
+    createDocument: update([Principal, blob, Principal], Result(Document, Message), (ownerId, document, signeeId) => {        
         let newDocument = {
             id: uuidv4(),
             ownerId: ownerId,
             document: document,
             createdAt: ic.time(),
             signedBy: signeeId,
+            signedAt: ic.time(),
+        };
+        listOfDocument.insert(newDocument.id, newDocument);
+        return Ok(newDocument);
+    }),
+
+    // create document uploaded by users
+    createDocumentUsingEmail: update([Principal, blob, text], Result(Document, Message), (ownerId, document, signeeEmail) => {
+        // TODO: implement validations and throw error if needed
+
+        const signeeId = listOfUser.values().find((user) => {
+            return (user.userName === signeeEmail);
+        });
+
+        if (signeeId === undefined) {
+            return Err({ NotFound: `user with email=${signeeEmail} not found` });
+        }
+        
+        let newDocument = {
+            id: uuidv4(),
+            ownerId: ownerId,
+            document: document,
+            createdAt: ic.time(),
+            signedBy: signeeId.id,
             signedAt: ic.time(),
         };
         listOfDocument.insert(newDocument.id, newDocument);
@@ -128,12 +150,18 @@ export default Canister({
         if ('None' in doc)
             return { NotFound: `document with id=${documentId} not found` };
         else
-            if (doc.Some.signedBy !== signeeId)
+            if (!doc.Some.signedBy.compareTo(signeeId))
                 return { Fail: 'document not assigned to this user' };
 
-        doc.Some.document = document;
-        doc.Some.signedAt = ic.time();
-        listOfDocument.insert(documentId, doc.Some);
+        let newDocument = {
+            id: doc.Some.id,
+            ownerId: doc.Some.ownerId,
+            document: document,
+            createdAt: doc.Some.createdAt,
+            signedBy: doc.Some.signedBy,
+            signedAt: ic.time(),
+        };
+        listOfDocument.insert(newDocument.id, newDocument);
         return { Succes: `Success signing document with id=${documentId}` };
     }),
 
@@ -143,7 +171,7 @@ export default Canister({
         if ('None' in doc)
             return Err({ NotFound: `document with id=${documentId} not found` });
         else
-            if (doc.Some.signedBy !== signeeId)
+            if (!doc.Some.signedBy.compareTo(signeeId))
                 return Err({ NotFound: `document not found` });
         
         return Ok(doc.Some);
@@ -151,16 +179,21 @@ export default Canister({
 
     // get all document owned by user
     getDocumentByOwner: query([Principal], Vec(Document), (id) => {
-        return listOfDocument.values().filter((doc) => doc.ownerId === id);
+        return listOfDocument.values().filter((doc) => doc.ownerId.compareTo(id));
     }),
 
     // get all document signed by user
     getDocumentBySignee: query([Principal], Vec(Document), (id) => {
-        return listOfDocument.values().filter((doc) => doc.signedBy === id);
+        return listOfDocument.values().filter((doc) => doc.signedBy.compareTo(id));
     }),
 
     // get all documents
     getAllDocument: query([], Vec(Document), () => {
         return listOfDocument.values();
+    }),
+
+    // get all documents
+    getAllDocumentByUser: query([Principal], Vec(Document), (id) => {
+        return listOfDocument.values().filter((doc) => doc.ownerId.compareTo(id) === 'eq' || doc.signedBy.compareTo(id) === 'eq');
     }),
 });

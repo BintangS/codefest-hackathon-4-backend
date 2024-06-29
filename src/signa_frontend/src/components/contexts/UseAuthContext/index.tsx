@@ -82,8 +82,6 @@ export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({childre
         .getPrincipal()
         .isAnonymous();
 
-      console.log("bro ", await client.getIdentity().getPrincipal().toText());
-
       setAuthClient(client);
       setIsAuthenticated(!isAnonymous);
     });

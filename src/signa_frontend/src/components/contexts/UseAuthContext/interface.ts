@@ -13,7 +13,7 @@ export interface userProfileDataInterface {
 
 export interface UserInterface {
   id: Principal;
-  userName: string;
+  userName: string; //username = email
   createdAt: bigint;
 }
 
