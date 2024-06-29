@@ -6,17 +6,21 @@ import SignaLogo1 from '../../assets/SignaLogo_v1.png'
 import SignaSignature from '../../assets/SignaSignature.png'
 import InternetIdentityLogo from '../../assets/InternetIdentityLogo.png'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react';
 
 const LoginModule = () => {
     const navigate = useNavigate()
     const { login, isAuthenticated } = useAuthContext()
 
     const handleSubmitLogin = () => {
-        login()
-        if (isAuthenticated) {
-            navigate('/upload')
-        }
+        login();
     }
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            navigate('/dashboard')
+        }
+    }, [isAuthenticated])
 
     return (
         <div className="flex flex-row bg-white">
