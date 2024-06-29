@@ -1,4 +1,4 @@
-# Signa
+# Signa - The 1st Web3.0 eSign Platform in ICP Ecosystem
 Welcome to Signa, your trusted, decentralized, and easy to use document signing on the Blockchain. This project utilizes Internet Computer (ICP) as the main platform.
 
 ## Get Started
