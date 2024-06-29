@@ -1,4 +1,3 @@
-
 import { Document, Page } from 'react-pdf';
 
 export interface PreviewPDFProps {

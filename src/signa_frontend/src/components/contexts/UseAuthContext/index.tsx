@@ -71,7 +71,9 @@ export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({childre
   };
 
   const logout = () => {
-    localStorage.removeItem("identityICP")
+    if (!authClient) return;
+    
+    authClient.logout();
     setIsAuthenticated(false);
   };
 

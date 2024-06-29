@@ -1,79 +1,27 @@
-import { useState } from 'react';
-import { signa_backend } from '../../../declarations/signa_backend';
-import { useNavigate } from 'react-router-dom';
+export interface PreviewPDFProps {
+    handlerSelectedFile: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    fileName?: string
+}
 
-import { useAuthContext } from '../components/contexts/UseAuthContext';
-import { Principal } from "@dfinity/principal";
-
-const DragAndDropUpload = () => {
-    const [file, setFile] = useState<Uint8Array | null>(null);
-    const [internetIdentityAddress, setInternetIdentityAddress] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
-    const { profile } = useAuthContext();
-    const navigate = useNavigate()
-
-    const handleSelectedFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const files = e.target.files;
-        if (files && files[0]) {
-            const reader = new FileReader();
-
-            reader.onload = (loadEvent) => {
-                const arrayBuffer = loadEvent.target?.result;
-                if (arrayBuffer) {
-                    const uint8Array = new Uint8Array(arrayBuffer as ArrayBuffer);
-                    setFile(uint8Array); // Make sure to adjust your state or logic to handle Uint8Array
-                }
-            };
-
-            reader.readAsArrayBuffer(files[0]);
-        }
-    }
-
-    const handleUpload = async () => {
-        console.log("Upload button clicked");
-        // todo: call load component preview pdf using the file choosen by the user
-        const users = await signa_backend.getAllUser();
-
-        console.log("Users: ", users);
-        console.log("file:", file);
-
-        if (profile?.id && internetIdentityAddress !== '') {
-            await signa_backend.createDocument(profile?.id, file || [], Principal.fromText(internetIdentityAddress));
-            alert("Document send!");
-            navigate('/dashboard');
-        } else if (profile?.id && email !== '') {
-            await signa_backend.createDocumentUsingEmail(profile?.id, file || [], email);
-            alert("Document send!");
-            navigate('/dashboard');
-        } else {
-            alert("You are not authenticated, please login!");
-        }
-    }
-
-    const handleInternetIdentityAddressInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setInternetIdentityAddress(e.target.value);
-    }
-
-    const handleEmailInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (regex.test(e.target.value)) {
-          setIsEmailValid(true);
-          setEmail(e.target.value);
-        } else {
-          setIsEmailValid(false);
-        }
-    }
-    
+const DragAndDropUpload: React.FC<PreviewPDFProps> = (props) => {
     return (
-        <form onSubmit={ (e) => { e.preventDefault() } }>
-            <input type="file" accept=".pdf" onChange={ handleSelectedFile } />
-            <input type="text" placeholder="internet identity address" onChange={ handleInternetIdentityAddressInput }></input>
-            <input type="text" placeholder="email" onChange={ handleEmailInput }></input>
-            {!isEmailValid && <div style={{ color: 'red' }}>Please enter a valid email.</div>}
-            <button onClick={ handleUpload }>Upload</button>
-        </form>
-    )
+        <div className="flex items-center justify-center w-full">
+            <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-500 border-dashed rounded-lg cursor-pointer bg-zinc-10 hover:bg-gray-100">
+                {props.fileName?.length === 0 && 
+                <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                    </svg>
+                    <p className="mb-2 text-sm text-gray-500 dark:text-gray-400"><span className="font-semibold">Click to upload</span> or drag and drop</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">PDF (MAX. 100Kb)</p>
+                </div>
+                }
+                {props.fileName?.length !== 0 &&
+                    <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">Selected file: { props.fileName }</p>
+                }
+                <input id="dropzone-file" type="file" className="hidden" accept=".pdf" onChange={ props.handlerSelectedFile } />
+            </label>
+        </div> )
 }
 
 export default DragAndDropUpload;

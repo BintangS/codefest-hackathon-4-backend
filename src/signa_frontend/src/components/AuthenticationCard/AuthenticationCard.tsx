@@ -41,7 +41,10 @@ const AuthenticationCard: React.FC<AuthenticationCardPropsInterface> = ({
   }
 
   return profile === undefined ? (
-    <div>Loading...</div>
+    <div className="flex items-center justify-center min-h-screen">
+      <svg className="animate-bounce bg-white dark:bg-slate-800 p-2 w-10 h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center"></svg>
+      <p className="text-gray-500 dark:text-gray-400 ml-2">Loading...</p>
+    </div>
   ) : !isAuthenticated ? (
     <LoginModule />
   ) : profile === null ? (
@@ -75,7 +78,7 @@ const AuthenticationCard: React.FC<AuthenticationCardPropsInterface> = ({
                 <div className="px-5 max-md:max-w-full">
                     <div className="flex gap-5 max-md:flex-col max-md:gap-0">
                         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-                            <div className="self-stretch text-left my-auto text-[1.5rem] font-bold leading-10 text-cyan-900 max-md:mt-10">
+                            <div className="self-stretch text-left my-auto font-bold leading-10 text-cyan-900 max-md:mt-10">
                                 Congratulations on
                                 Signing Up to
                                 Internet Identity!
@@ -90,21 +93,18 @@ const AuthenticationCard: React.FC<AuthenticationCardPropsInterface> = ({
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col px-3.5 py-8 mt-6 text-lg font-semibold text-center rounded-xl border border-solid bg-zinc-100 border-zinc-800 max-md:max-w-full">
-                  <form onSubmit={ (e) => { e.preventDefault() }}>
-                    <input
-                    type="text"
-                    name="email"
-                    placeholder="Please Input Your Email Address Here to Continue"
-                    onChange={ validateEmail }
-                    className="self-center text-neutral-900 max-md:max-w-full" />
-                    
-                    {!isEmailValid && <div style={{ color: 'red' }}>Please enter a valid email.</div>}
-                    
-                    <button type="submit" disabled={isLoading} className="rounded-sm" onClick={handleSubmit}>
-                      {isLoading ? 'Loading...' : 'Submit'}
-                    </button>
-                    </form>
+                <div className="flex flex-col px-3.5 py-8 mt-6 text-lg text-center rounded-xl bg-zinc-100 max-md:max-w-full">
+                  <input
+                  type="text"
+                  name="email"
+                  placeholder="Please Input Your Email Address Here to Continue"
+                  onChange={ validateEmail }
+                  className="self-center max-w-full bg-transparent w-1/2 h-12 p-4" />
+                  
+                  {!isEmailValid && <p className="text-red-500 text-xs italic my-2">Please enter a valid email.</p>}
+                  <button type="submit" disabled={isLoading} className="justify-center items-center whitespace-nowrap mt-4 py-4 bg-sky-300 rounded-md text-white transition-color duration-500 hover:bg-sky-500" onClick={handleSubmit}>
+                    {isLoading ? 'Loading...' : 'Submit'}
+                  </button>
                 </div>
             </div>
         </div>
