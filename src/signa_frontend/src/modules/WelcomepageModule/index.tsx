@@ -35,41 +35,26 @@ const HomepageModule = () => {
                                     className="shrink-0 aspect-[1.3] w-[87px]"
                                 />
                             </div>
-                            <div className="flex gap-5 justify-between self-stretch my-auto text-[1.5vw] text-center text-white max-md:flex-wrap max-md:max-w-full">
+                            <div className="flex gap-10 justify-between my-auto text-center text-white max-md:flex-wrap max-md:max-w-full">
                                 <Link to="/dashboard">
-                                    <div className="flex gap-2 whitespace-nowrap">
+                                    <div className="flex gap-2 whitespace-nowrap opacity-100 z-10 transition-opacity duration-500 hover:opacity-40">
                                         <div>Dashboard</div>
-                                        <img
-                                            loading="lazy"
-                                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                            className="shrink-0 w-[1.5vw] aspect-square"
-                                        />
                                     </div>
                                 </Link>
                                 <Link to="/product">
-                                    <div className="flex gap-2 whitespace-nowrap">
+                                    <div className="flex gap-2 whitespace-nowrap opacity-100 z-10 transition-opacity duration-500 hover:opacity-40">
                                         <div>Product</div>
-                                        <img
-                                            loading="lazy"
-                                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                            className="shrink-0 w-[1.5vw] aspect-square"
-                                        />
                                     </div>
                                 </Link>
                                 <Link to="/pricing">
-                                    <div className="flex gap-2">
+                                    <div className="flex gap-2 opacity-100 z-10 transition-opacity duration-500 hover:opacity-40">
                                         <div>Plan & Pricing</div>
-                                        <img
-                                            loading="lazy"
-                                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec9d012377fe737cce6d80cda5bfc48d405b08f2639aa6e2129568b386e8ad4a?apiKey=77b90fc2290346248c9501f26423abd9&"
-                                            className="shrink-0 w-[1.5vw] aspect-square"
-                                        />
                                     </div>
                                 </Link>
                             </div>
-                            <div className="justify-center self-stretch p-2.5 my-auto text-[1.5vw] text-center text-white whitespace-nowrap bg-cyan-600 rounded-xl">
-                                Contact
-                            </div>
+                            <button className="bg-transparent hover:bg-blue-500 text-white font-semibold transition-colors duration-500 t-white py-2 px-4 border border-blue-300 hover:border-transparent rounded">
+                                Contact us!
+                            </button>
                         </div>
                         <div className="mt-[50px] text-[4rem] font-bold leading-[70px] text-left text-sky-200 max-md:mt-10 max-md:max-w-full max-md:text-4xl max-md:leading-[57px]">
                             The First Web 3.0 <br />
@@ -91,7 +76,7 @@ const HomepageModule = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex [height:inherit] gap-24 justify-around px-5 md:flex-wrap mt-10">
+            <div className="flex overflow-x-scroll hide-scroll-bar [height:inherit] gap-24 justify-around px-5 md:flex-wrap mt-10">
                 <img
                     loading="lazy"
                     src={PeruriLogo}
@@ -122,9 +107,9 @@ const HomepageModule = () => {
                                 with Web 3.0 SCP. You will have stronger security protection of
                                 your document
                             </div>
-                            <div className="text-[1rem] flex gap-5 items-center self-start mt-9 text-center">
+                            <div className="flex gap-5 items-center self-start mt-9 text-center">
                                 <Link to={'/login'}>
-                                    <div className="flex text-[1.5vw] gap-2.5 justify-center self-stretch p-3.5 text-white bg-cyan-600 rounded-xl shadow-sm">
+                                    <div className="flex gap-2.5 justify-center self-stretch p-3.5 text-white bg-cyan-600 rounded-xl shadow-sm transition-opacity duration-500 hover:opacity-75">
                                         <div>Sign in Now!</div>
                                         <img
                                             loading="lazy"

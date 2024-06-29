@@ -52,13 +52,12 @@ const SignupModule = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col px-3.5 py-8 mt-6 text-lg font-semibold text-center rounded-xl border border-solid bg-zinc-100 border-zinc-800 max-md:max-w-full">
-                        <div className="self-center text-neutral-900 max-md:max-w-full">
-                            Please Input Your Email Address Here to Continue
-                        </div>
-                        <div className="justify-center items-center px-16 py-6 mt-5 whitespace-nowrap bg-sky-200 rounded-md border border-solid border-zinc-800 text-stone-600 max-md:px-5 max-md:max-w-full">
-                            [Email]
-                        </div>
+                    <div className="flex flex-col px-3.5 py-8 mt-6 text-lg font-semibold text-center rounded-xl bg-zinc-100 border-zinc-800 max-md:max-w-full">
+                        <input type="text" className="self-center max-w-full bg-transparent w-1/2 h-12 p-4" placeholder="Input your email here...">
+                        </input>
+                        <button className="justify-center items-center px-16 py-6 mt-5 whitespace-nowrap bg-sky-300 rounded-md text-white max-md:px-5 max-md:max-w-full transition-color duration-500 hover:bg-sky-500">
+                            Submit your mail!
+                        </button>
                     </div>
                 </div>
             </div>
