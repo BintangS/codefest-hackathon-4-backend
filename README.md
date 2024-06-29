@@ -1,4 +1,4 @@
-<div style="text-align:center;">
+<div style="align:center;">
     <img src="./src/signa_frontend/public/SignaLogo.svg" style="margin-top:10px;margin-bottom:10px;width:150px;" alt="Signa Logo" width="300"></a>
 </div>
 
