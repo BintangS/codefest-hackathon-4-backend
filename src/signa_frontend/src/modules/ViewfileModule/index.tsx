@@ -102,12 +102,12 @@ const ViewfileModule = () => {
         })
         const QrCodeArrayBuffer = new Uint8Array(await QrCodeBlob.arrayBuffer())
         const QrCodePDFImage = await pdfDoc.embedJpg(QrCodeArrayBuffer)
-        const QrCodePDFImageDim = QrCodePDFImage.scale(0.5)
+        const imageDim = QrCodePDFImage.scale(0.5)
         firstPage.drawImage(QrCodePDFImage, {
             x: width / 4,
             y: height / 1.5,
-            width: QrCodePDFImageDim.width,
-            height: QrCodePDFImageDim.height
+            width: imageDim.width,
+            height: imageDim.height
         })
 
         // Serialize the PDFDocument to bytes (a Uint8Array)
