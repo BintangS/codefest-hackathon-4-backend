@@ -6,20 +6,24 @@ import SignaLogo1 from '../../assets/SignaLogo_v1.png'
 import SignaSignature from '../../assets/SignaSignature.png'
 import InternetIdentityLogo from '../../assets/InternetIdentityLogo.png'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react';
 
 const LoginModule = () => {
     const navigate = useNavigate()
     const { login, isAuthenticated } = useAuthContext()
 
     const handleSubmitLogin = () => {
-        login()
-        if (isAuthenticated) {
-            navigate('/upload')
-        }
+        login();
     }
 
+    useEffect(() => {
+        if (isAuthenticated) {
+            navigate('/dashboard')
+        }
+    }, [isAuthenticated])
+
     return (
-        <div className="bg-white">
+        <div className="flex flex-row bg-white">
             <div className="flex justify-around gap-5 max-md:flex-col max-md:gap-0">
                 <div className="flex flex-col w-[50%] max-md:ml-0 max-md:w-full">
                     <div className="flex flex-col grow items-center px-5 mt-20 max-md:mt-10 max-md:max-w-full">
@@ -45,25 +49,25 @@ const LoginModule = () => {
                         />
                     </div>
                 </div>
-                <div className="flex relative ml-[10%] flex-col w-[50%] max-md:ml-0 max-md:w-full">
+                <div className="flex">
                     <div className="flex flex-col self-stretch my-auto text-base font-light text-center text-cyan-600 max-md:mt-10 max-md:max-w-full">
-                        <div className="absolute top-[10%] right-1/5 w-[75%]">
-                            <img
-                                loading="lazy"
-                                src={RoboLoginPageImage}
-                                className="w-full aspect-[0.93] max-md:max-w-full"
-                            />
-                            <div onClick={handleSubmitLogin} className="absolute w-[110%] text-[1.25vw] leading-[2vw] lg:top-[70%] md:top-[90%] right-0 -translate-y-[300%] text-[#fff] border-[none] cursor-pointer flex gap-3.5 py-4 pr-3.5 pl-7 font-bold text-center text-white bg-cyan-500 rounded-xl border border-solid border-zinc-800 border-opacity-0">
+                        <img
+                            loading="lazy"
+                            src={RoboLoginPageImage}
+                            className="w-full md:w-10/12 lg:max-w-full max-w-full md:max-w-sm xl:max-w-lg object-cover"
+                        />
+                        <div className="w-[110%] lg:top-[70%] md:top-[90%] right-0 -translate-y-[300%]">
+                            <button onClick={handleSubmitLogin} className="text-white border-[none] flex gap-3.5 py-4 pr-3.5 pl-7 font-bold text-center text-white bg-cyan-500 rounded-xl border border-solid border-zinc-800 border-opacity-0 transition-opacity duration-500 hover:opacity-80 md-4">
                                 <div className="flex-auto border border-solid border-zinc-800 border-opacity-0">
                                     Sign In Here with Internet Identity
                                 </div>
                                 <img
                                     loading="lazy"
                                     src={InternetIdentityLogo}
-                                    className="shrink-0 max-w-full aspect-[3.7] w-[113px]"
+                                    className="shrink-0 max-w-full aspect-[3.7] w-[113px] justify-around self-center border border-solid border-zinc-800 border-opacity-0"
                                 />
-                            </div>
-                            <div className="flex absolute text-[1.5vw] md:top-[30%] lg:top-[40%] right-0 gap-4 self-center mt-12 2xl:mt-14 xl:mt-6">
+                            </button>
+                            <div className="flex gap-3.5 py-4 pr-3.5 pl-72">
                                 <Link to="/privacy">
                                     <div className="grow my-auto">Privacy and T&C</div>
                                 </Link>

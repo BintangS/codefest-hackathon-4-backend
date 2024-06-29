@@ -71,7 +71,9 @@ export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({childre
   };
 
   const logout = () => {
-    localStorage.removeItem("identityICP")
+    if (!authClient) return;
+    
+    authClient.logout();
     setIsAuthenticated(false);
   };
 
@@ -81,8 +83,6 @@ export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({childre
         .getIdentity()
         .getPrincipal()
         .isAnonymous();
-
-      console.log("bro ", await client.getIdentity().getPrincipal().toText());
 
       setAuthClient(client);
       setIsAuthenticated(!isAnonymous);

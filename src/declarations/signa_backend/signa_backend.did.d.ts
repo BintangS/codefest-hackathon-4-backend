@@ -21,6 +21,24 @@ export interface _SERVICE {
           { 'Succes' : string }
       }
   >,
+  'createDocumentUsingEmail' : ActorMethod<
+    [Principal, Uint8Array | number[], string],
+    {
+        'Ok' : {
+          'id' : string,
+          'ownerId' : Principal,
+          'createdAt' : bigint,
+          'signedAt' : bigint,
+          'signedBy' : Principal,
+          'document' : Uint8Array | number[],
+        }
+      } |
+      {
+        'Err' : { 'Fail' : string } |
+          { 'NotFound' : string } |
+          { 'Succes' : string }
+      }
+  >,
   'createUser' : ActorMethod<
     [{ 'id' : Principal, 'name' : string }],
     { 'Fail' : string } |
@@ -46,9 +64,66 @@ export interface _SERVICE {
       }
     >
   >,
+  'getAllDocumentByUser' : ActorMethod<
+    [Principal],
+    Array<
+      {
+        'id' : string,
+        'ownerId' : Principal,
+        'createdAt' : bigint,
+        'signedAt' : bigint,
+        'signedBy' : Principal,
+        'document' : Uint8Array | number[],
+      }
+    >
+  >,
   'getAllUser' : ActorMethod<
     [],
     Array<{ 'id' : Principal, 'userName' : string, 'createdAt' : bigint }>
+  >,
+  'getDocumentByIdAndSigneeId' : ActorMethod<
+    [string, Principal],
+    {
+        'Ok' : {
+          'id' : string,
+          'ownerId' : Principal,
+          'createdAt' : bigint,
+          'signedAt' : bigint,
+          'signedBy' : Principal,
+          'document' : Uint8Array | number[],
+        }
+      } |
+      {
+        'Err' : { 'Fail' : string } |
+          { 'NotFound' : string } |
+          { 'Succes' : string }
+      }
+  >,
+  'getDocumentByOwner' : ActorMethod<
+    [Principal],
+    Array<
+      {
+        'id' : string,
+        'ownerId' : Principal,
+        'createdAt' : bigint,
+        'signedAt' : bigint,
+        'signedBy' : Principal,
+        'document' : Uint8Array | number[],
+      }
+    >
+  >,
+  'getDocumentBySignee' : ActorMethod<
+    [Principal],
+    Array<
+      {
+        'id' : string,
+        'ownerId' : Principal,
+        'createdAt' : bigint,
+        'signedAt' : bigint,
+        'signedBy' : Principal,
+        'document' : Uint8Array | number[],
+      }
+    >
   >,
   'getUserById' : ActorMethod<
     [Principal],
