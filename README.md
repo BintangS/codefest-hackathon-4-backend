@@ -73,7 +73,7 @@ Tech stack that we used for this project
 
 - Backend
 --- Node v20
---- Typescript
+--- Typescript & Motoko
 
 ### Making changes on Backend
 
