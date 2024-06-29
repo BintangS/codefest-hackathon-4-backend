@@ -155,7 +155,7 @@ const DashboardfileModule = () => {
                                                             </td>
                                                             <td className='w-1/5'>
                                                                 <div className="flex gap-3.5 mt-7">
-                                                                    <div className="flex-auto justify-center px-2.5 py-1 bg-lime-700 rounded-xl">
+                                                                    <div className={((doc.signedAt === doc.createdAt) ? "bg-[#D6D91D]" : "bg-[#81D914]") + " flex-auto justify-center px-2.5 py-1 rounded-xl"}>
                                                                         { doc.signedAt === doc.createdAt ? "Waiting for sign" : "Signed" }
                                                                     </div>
                                                                 </div>
