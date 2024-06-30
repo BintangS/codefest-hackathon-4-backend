@@ -192,7 +192,7 @@ export default Canister({
         return listOfDocument.values();
     }),
 
-    // get all documents
+    // get all documents by user
     getAllDocumentByUser: query([Principal], Vec(Document), (id) => {
         return listOfDocument.values().filter((doc) => doc.ownerId.compareTo(id) === 'eq' || doc.signedBy.compareTo(id) === 'eq');
     }),

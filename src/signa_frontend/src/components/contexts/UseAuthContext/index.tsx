@@ -44,10 +44,10 @@ export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({childre
     try {
       setProfile(undefined);
       const responseData = await signa_backend.getUserById(principal);
-      if ('Err' in responseData && 'NotFound' in responseData.Err) {
+      if ('err' in responseData) {
         setProfile(null);
-      } else if ('Ok' in responseData) {
-        setProfile(responseData.Ok);
+      } else if ('ok' in responseData) {
+        setProfile(responseData.ok);
       }
     } catch (err: any) {
       throw new Error(err.message);
@@ -58,11 +58,11 @@ export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({childre
     if (!authClient || name == '') return;
 
     try {
-      const responseData = await signa_backend.createUser({
-        id: authClient.getIdentity().getPrincipal(),
-        name: name,
-      });
-      if ('Succes' in responseData) {
+      const responseData = await signa_backend.createUser(
+        authClient.getIdentity().getPrincipal(),
+        name
+      );
+      if ('ok' in responseData) {
         getProfile();
       }
     } catch (err: any) {

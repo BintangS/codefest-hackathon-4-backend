@@ -1,12 +1,8 @@
 {
     "canisters": {
         "signa_backend": {
-            "build": "npx azle signa_backend",
-            "candid": "src/signa_backend/signa_backend.did",
-            "gzip": true,
-            "main": "src/signa_backend/src/index.ts",
-            "type": "custom",
-            "wasm": ".azle/signa_backend/signa_backend.wasm"
+            "main": "src/signa_backend_mo/main.mo",
+            "type": "motoko"
         },
         "signa_frontend": {
             "dependencies": [
@@ -33,7 +29,7 @@
     "defaults": {
         "build": {
             "args": "",
-            "packtool": ""
+            "packtool": "mops sources"
         }
     },
     "output_env_file": ".env",

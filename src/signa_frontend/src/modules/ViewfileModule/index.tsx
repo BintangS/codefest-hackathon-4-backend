@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { PDFDocument } from 'pdf-lib';
-// import { degrees, PDFDocument, PDFImage, rgb, StandardFonts } from 'pdf-lib';
-import QrCode from 'react-qrcode-svg'
+import Qr from 'qrcode';
 
 import AssetLeftReceivePage from '../../assets/AssetLeft-ReceivePage.webp'
 import AssetRightReceivePage from '../../assets/AssetRight-ReceivePage.webp'
@@ -15,21 +14,6 @@ import { signa_backend } from '../../../../declarations/signa_backend';
 import { useAuthContext } from '../../components/contexts/UseAuthContext';
 import AuthenticationCard from '../../components/AuthenticationCard/AuthenticationCard';
 import PreviewPDF from '../../components/previewPdf';
-import { renderToString } from 'react-dom/server';
-
-interface QrCodeComponentInterface {
-    documentId: string
-}
-
-const QRCodeComponent: React.FC<QrCodeComponentInterface> = ({ documentId }) => (
-    <QrCode
-        data={documentId}
-        height="300"
-        width="300"
-        fgColor="#A1B2C3"
-        bgColor="#123456"
-    />
-);
 
 const ViewfileModule = () => {
     const [documentBytes, setDocumentBytes] = useState<ArrayBuffer>();
@@ -37,6 +21,7 @@ const ViewfileModule = () => {
     const [isDocumentSigned, setIsDocumentSigned] = useState<boolean>(false);
     const [isProcessing, setIsProcessing] = useState<boolean>(false);
     const [isDocumentSignedAndSubmitted, setIsDocumentSignedAndSubmitted] = useState<boolean>(false);
+    const [documentSignee, setDocumentSignee] = useState<string>('');
     const { profile } = useAuthContext();
     const navigate = useNavigate();
     const location = useLocation();
@@ -56,7 +41,7 @@ const ViewfileModule = () => {
         if (profile?.id && documentBytes !== null) {
             await signa_backend.signDocument(profile?.id, documentBytesForView as Uint8Array, location.state?.documentId);
 
-            alert("Document send!");
+            alert("Document signed and submitted successfully!");
             setIsProcessing(false);
             navigate('/dashboard');
         }
@@ -74,41 +59,26 @@ const ViewfileModule = () => {
 
         // Load a PDFDocument from the existing PDF bytes
         const pdfDoc = await PDFDocument.load(existingPdfBytes as ArrayBuffer);
-        // Embed the Helvetica font
-        // const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
 
         // Get the first page of the document
         const pages = pdfDoc.getPages();
         const firstPage = pages[0];
 
         // Get the width and height of the first page
-        const { width, height } = firstPage.getSize();
-
-        // // Draw a string of text diagonally across the first page
-        // firstPage.drawText('Signed by Signa!', {
-        //     x: width / 4,
-        //     y: height / 1.5,
-        //     size: 50,
-        //     font: helveticaFont,
-        //     color: rgb(0.95, 0.1, 0.1),
-        //     rotate: degrees(-45),
-        // })
+        const { width } = firstPage.getSize();
 
         // Draw a qrcode (containing document id) at bottom of the first page
-        const QrCode: JSX.Element = <QRCodeComponent documentId={location.state?.documentId} />
-        const QrCodeStringSVG = renderToString(QrCode)
-        const QrCodeBlob = new Blob([QrCodeStringSVG], {
-            type: 'image/svg+xml'
-        })
-        const QrCodeArrayBuffer = new Uint8Array(await QrCodeBlob.arrayBuffer())
-        const QrCodePDFImage = await pdfDoc.embedJpg(QrCodeArrayBuffer)
-        const imageDim = QrCodePDFImage.scale(0.5)
+        let QrCodeUrl: string = await Qr.toDataURL(location.state?.documentId);;
+
+        const QrCodePDFImage = await pdfDoc.embedPng(QrCodeUrl);
+        const imageDim = QrCodePDFImage.scale(0.5);
         firstPage.drawImage(QrCodePDFImage, {
-            x: width / 4,
-            y: height / 1.5,
+            x: width - imageDim.width - 10,
+            y: imageDim.height + 10,
             width: imageDim.width,
             height: imageDim.height
-        })
+        });
+
 
         // Serialize the PDFDocument to bytes (a Uint8Array)
         const modifiedPdfBytes = await pdfDoc.save()
@@ -123,7 +93,7 @@ const ViewfileModule = () => {
             return;
         } else if (isProcessing) {
             return (
-                <button type="button" className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-sky-300 hover:bg-sky-500 transition ease-in-out duration-150 cursor-not-allowed" disabled>
+                <button type="button" className="inline-flex items-center px-16 py-6 mt-5 font-semibold leading-6 text-sm shadow rounded-md text-white bg-sky-300 hover:bg-sky-500 transition ease-in-out duration-150 cursor-not-allowed" disabled>
                     <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx={12} cy={12} r={10} stroke="currentColor" strokeWidth={4} />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -131,11 +101,11 @@ const ViewfileModule = () => {
                     Processing...
                 </button>
             )
-        } else if (!isDocumentSigned) {
+        } else if (!isDocumentSigned && documentSignee === profile?.id.toString()) {
             return (<button className="justify-center items-center px-16 py-6 mt-5 whitespace-nowrap bg-sky-300 rounded-md text-white max-md:px-5 max-md:max-w-full transition-color duration-500 hover:bg-sky-500" onClick={handleSignDocument}>
                 Sign Document
             </button>);
-        } else if (isDocumentSigned) {
+        } else if (isDocumentSigned && documentSignee === profile?.id.toString()) {
             return (<button className="justify-center items-center px-16 py-6 mt-5 whitespace-nowrap bg-sky-300 rounded-md text-white max-md:px-5 max-md:max-w-full transition-color duration-500 hover:bg-sky-500" onClick={handleSubmitSignedDocument}>
                 Submit Signed Document
             </button>)
@@ -149,13 +119,14 @@ const ViewfileModule = () => {
                 return;
             }
 
-            const doc = await signa_backend.getDocumentByIdAndSigneeId(location.state?.documentId, profile.id);
+            const doc = await signa_backend.getDocumentByIdAsOwnerOrSignee(location.state?.documentId, profile.id);
 
-            if (doc && 'Ok' in doc) {
-                const documentBytesCopy = new Uint8Array(doc.Ok.document).slice().buffer;
-                setDocumentBytesForView(doc.Ok.document as Uint8Array);
+            if (doc && 'ok' in doc) {
+                const documentBytesCopy = new Uint8Array(doc.ok.document).slice().buffer;
+                setDocumentBytesForView(doc.ok.document as Uint8Array);
                 setDocumentBytes(documentBytesCopy);
-                if (doc.Ok.createdAt !== doc.Ok.signedAt) {
+                setDocumentSignee(doc.ok.signedBy.toString());
+                if (doc.ok.createdAt !== doc.ok.signedAt) {
                     setIsDocumentSignedAndSubmitted(true);
                 }
             }
@@ -205,9 +176,9 @@ const ViewfileModule = () => {
                                 Document id: {location.state?.documentId}
                             </div>
                         </div>
-                        <div className="flex relative flex-col items-center px-7 pt-20 pb-6 mt-14 text-lg font-semibold rounded-xl border border-solid bg-zinc-100 border-zinc-800 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-                            {documentBytesForView && <PreviewPDF pdfBytes={new Uint8Array(documentBytesForView)} />}
-                            {showSignButton()}
+                        <div className="flex relative flex-col items-center px-7 pt-20 pb-6 mt-14 text-lg font-semibold rounded-xl bg-zinc-100 border-zinc-800 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                            { documentBytesForView && <PreviewPDF pdfBytes = { new Uint8Array(documentBytesForView) } /> }
+                            { showSignButton() }
                         </div>
                     </div>
                 </div>

@@ -35,6 +35,10 @@
 
 •	**Dashboard:** Effortlessly track the progress of your documents and access detailed information on a comprehensive dashboard, ensuring you never lose track of important paperwork again.
 
+**Let's try it here
+**
+https://oq3fe-hqaaa-aaaap-ahmtq-cai.icp0.io/
+
 ## Get Started
 
 Before starting exploring this project, please try to understand how Internet Computer (ICP) works by reading this documents
@@ -69,7 +73,7 @@ Tech stack that we used for this project
 
 - Backend
 --- Node v20
---- Typescript
+--- Typescript & Motoko
 
 ### Making changes on Backend
 

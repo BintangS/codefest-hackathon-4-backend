@@ -60,7 +60,7 @@ const ProductModule = () => {
                 <div className="flex gap-5 max-md:flex-col max-md:gap-0">
                     <div className="flex flex-col w-[44%] max-md:ml-0 max-md:w-full">
                         <div className="flex flex-col max-md:mt-10 max-md:max-w-full">
-                            <div className="leading-[3vw] text-left text-[2.5vw] max-md:max-w-full">
+                            <div className="text-left text-2xl max-md:max-w-full">
                                 <span className="font-bold text-orange-600">ICP Web3.0</span>{" "}
                                 offers a more secure solution with its decentralized data, so
                                 you can feel safe about the crucial documents. Consequently,{" "}
@@ -73,10 +73,10 @@ const ProductModule = () => {
                                 <div className="flex gap-5 max-md:flex-col max-md:gap-0">
                                     <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                                         <div className="flex flex-col max-md:mt-8">
-                                            <div className="text-[3vw] font-bold leading-10 text-cyan-900">
+                                            <div className="text-4xl font-bold leading-10 text-cyan-900">
                                                 &gt;50%
                                             </div>
-                                            <div className="mt-8 text-[2vw] leading-[3vw] text-neutral-900">
+                                            <div className="mt-8 text-2xl text-neutral-900">
                                                 <span className="font-bold text-cyan-900">Cheaper</span>
                                                 <span className="font-bold">.</span> Canister simplifies
                                                 developing and maintaining online systems and services,
@@ -86,10 +86,10 @@ const ProductModule = () => {
                                     </div>
                                     <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
                                         <div className="flex flex-col grow max-md:mt-8">
-                                            <div className="text-[3vw] font-bold leading-10 text-cyan-900">
+                                            <div className="text-4xl font-bold leading-10 text-cyan-900">
                                                 Web2
                                             </div>
-                                            <div className="mt-8 text-[2vw] leading-[3vw] text-neutral-900">
+                                            <div className="mt-8 text-2xl text-neutral-900">
                                                 <span className="font-bold text-blue-900">
                                                     Compatible
                                                 </span>
@@ -106,10 +106,10 @@ const ProductModule = () => {
                                 <div className="flex gap-5 max-md:flex-col max-md:gap-0">
                                     <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                                         <div className="flex flex-col grow max-md:mt-8">
-                                            <div className="text-[3vw] font-bold leading-10 text-cyan-900">
+                                            <div className="text-4xl font-bold leading-10 text-cyan-900">
                                                 10x
                                             </div>
-                                            <div className="mt-8 text-[2vw] leading-[3vw] text-neutral-900">
+                                            <div className="mt-8 text-2xl text-neutral-900">
                                                 <span className="font-bold text-blue-900">
                                                     More Secured
                                                 </span>
@@ -121,10 +121,10 @@ const ProductModule = () => {
                                     </div>
                                     <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
                                         <div className="flex flex-col grow max-md:mt-8">
-                                            <div className="text-[3vw] font-bold leading-10 text-cyan-900">
+                                            <div className="text-4xl font-bold leading-10 text-cyan-900">
                                                 100%
                                             </div>
-                                            <div className="mt-8 text-[2vw] leading-[3vw] text-neutral-900">
+                                            <div className="mt-8 text-2xl text-neutral-900">
                                                 <span className="font-bold text-blue-900">
                                                     On Chain
                                                 </span>
